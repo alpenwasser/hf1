@@ -1,5 +1,5 @@
-Technical Report for P5
-=======================================
+Hochfrequenztechnik 1
+=====================
 
 Based on the
 [longtex-Template](https://github.com/alpenwasser/longtex), itself based on the
