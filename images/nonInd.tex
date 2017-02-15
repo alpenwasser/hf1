@@ -1,0 +1,30 @@
+\tikzset{external/export next=false}
+\begin{tikzpicture}
+    % Most of the snake
+    \foreach \y in {-2,-1,0,1,2} {
+        \draw (0,\y-0.25) -- (8,\y-0.25) -- (8,\y+0.25) -- (0,\y+0.25);
+        \draw[-Stealth] (4.5,\y-0.35) -- (5.5,\y-0.35);
+        \draw[-Stealth] (3.5,\y+0.15) -- (2.5,\y+0.15);
+    }
+
+    % Left vertical connections
+    \foreach \y in {-1.75,-0.75,0.25,1.25} {
+        \draw (0,\y) -- (0,\y+0.5);
+    }
+
+    % Lower Wires
+    \node at (8.3,-2.25) {\tiny$4'$};
+    \node at (8.3,-1.75) {\tiny$3'$};
+    \node at (8.3,-1.25) {\tiny$2'$};
+    \node at (8.3,-0.75) {\tiny$1'$};
+
+    % Wire of Interest
+    \node at (8.3,-0.25) {\tiny$A$};
+
+    % Upper Wires
+    \node at (8.3,0.25) {\tiny$1$};
+    \node at (8.3,0.75) {\tiny$2$};
+    \node at (8.3,1.25) {\tiny$3$};
+    \node at (8.3,1.75) {\tiny$4$};
+    \node at (8.3,2.25) {\tiny$5$};
+\end{tikzpicture}

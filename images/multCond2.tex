@@ -1,0 +1,13 @@
+\begin{tikzpicture}
+    \coordinate (A) at (0,0);
+    \coordinate (B) at (3.46,2);
+    \coordinate (C) at (3.46,-2);
+
+    \draw[dashed]   (A) -- node[midway,above left] {$d$} 
+                    (B) -- node[midway,right] {$d$} 
+                    (C) -- node[midway,below left] {$d$} cycle;
+
+    \filldraw[pattern color=black!30,pattern=north east lines] (A) circle (0.5cm);
+    \filldraw[pattern color=black!30,pattern=north east lines] (B) circle (0.5cm);
+    \filldraw[pattern color=black!30,pattern=north east lines] (C) circle (0.5cm);
+\end{tikzpicture}

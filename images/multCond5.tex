@@ -1,0 +1,21 @@
+%\tikzset{external/export next=false}
+\begin{tikzpicture}
+    % Circle around which inner conductors are distributed
+    \draw[dashed] (0,0) circle (1.5cm);
+
+    % Circle around which outer conductors are distributed
+    \draw[dashed] (0,0) circle (3.5cm);
+
+    % Conductors
+    \foreach \angle in {30,90,150,210,270,330} {
+        \draw[fill=white] (\angle:1.5) circle (0.25cm);
+        \draw[fill=white] (\angle:3.5) circle (0.4cm);
+    }
+
+    % Radii
+    \draw[dashed] (0,0) -- node[midway,above left] {$a_1$} (45:1.5);
+    \draw[dashed] (0,0) -- node[midway,above right] {$a_2$} (0:3.5);
+
+    \node at (150:4.2) {$\rho_2$};
+    \node at (150:2.1) {$\rho_1$};
+\end{tikzpicture}
