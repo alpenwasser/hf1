@@ -1,0 +1,23 @@
+\begin{tikzpicture}
+    \coordinate                   (O) at (0,0);
+    \coordinate                (plus) at (0.2,-0.2);
+    \coordinate                (minus) at (2.8,0);
+    \coordinate                   (A) at (-0.75,1.3);
+    \coordinate                   (C) at (-0.67,0.67);
+    \coordinate                   (B) at (2.6 ,1.5 );
+    \coordinate                   (D) at (-2.83,-2.83);
+
+    \filldraw[pattern color=black!30,pattern=north west lines] (O) circle (4cm);
+    \fill[white] (O) circle (3cm);
+    \filldraw[pattern color=black!30,pattern=north east lines] (O) circle (1.5cm);
+    \draw (O) circle (3cm);
+
+    \fill[white] (plus) circle (0.2cm);
+    \fill[white] (C) circle (0.2cm);
+    \node     at (plus) {$+$};
+    \node     at (minus) {$-$};
+
+    \draw (O) -- node[midway,left]       {$a_1$}   (A);
+    \draw (O) -- node[midway,below right]{~~$a_2$} (B);
+    \draw (O) -- node[midway,above left]{$a_3$} (D);
+\end{tikzpicture}

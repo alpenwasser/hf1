@@ -31,12 +31,30 @@
 \usepackage[utf8]{inputenc}  % input encoding
 \usepackage[ngerman]{babel}
 \usepackage{lipsum}          % filler text
+\usepackage{xtab}
+
+% -------------------------------------------------------- %
+% xcolor  and kvoptions  are  loaded by  xcolor-solarized. %
+% If   you  require   special   options   for  these   two %
+% packages,  uncomment  these  two lines  and  pass  those %
+% options. Otherwise  leave them  commented out  since the %
+% packages are loaded anyway.                              %
+% We load xcolor here to avoid a package option conflict   %
+% -------------------------------------------------------- %
+\usepackage[table]{xcolor}
+%\usepackage{kvoptions}
+%\usepackage[prefix=sol]{xcolor-solarized}
+\usepackage{xcolor-solarized}
+
+% -------------------------------------------------------- %
+% General Packages, continued                              %
+% -------------------------------------------------------- %
 \usepackage{graphicx}
 \usepackage{amsmath}         % for reasonable math typesetting
 \usepackage{pdfpages}        % include pdf documents
 \usepackage{adjustbox}       % helps w/ minipage alignmant
 \usepackage{pbox}            % boxes w/ line breaks in tables
-\usepackage[textsize=footnotesize, textwidth = 37mm, german, colorinlistoftodos]{todonotes}
+\usepackage[textsize=footnotesize, textwidth = 37mm, english, colorinlistoftodos]{todonotes}
 \usepackage{calc}            % used for calculating margins and widths for A3 pages
 \usepackage[separate-uncertainty=true]{siunitx}
 \usepackage[light]{kpfonts}
@@ -44,7 +62,6 @@
 \usepackage[european,siunitx,cuteinductors]{circuitikz}
 \usepackage{adjustbox}
 \usepackage{microtype}
-\usepackage{colortbl}
 %\usepackage{amsfonts}        % not sure yet if we need this
 %\usepackage{caption}         % captions outside float environments, overrides memoir's caption facilities
 %\usepackage{subcaption} % same as the caption package, seems to override memoir's own caption configs
@@ -56,16 +73,12 @@
 %\overfullrule=2cm
 
 % -------------------------------------------------------- %
-% xcolor  and kvoptions  are  loaded by  xcolor-solarized. %
-% If   you  require   special   options   for  these   two %
-% packages,  uncomment  these  two lines  and  pass  those %
-% options. Otherwise  leave them  commented out  since the %
-% packages are loaded anyway.                              %
+% Bibliography: Have as Numbered Chapter                   %
 % -------------------------------------------------------- %
-%\usepackage{xcolor}
-%\usepackage{kvoptions}
-%\usepackage[prefix=sol]{xcolor-solarized}
-\usepackage{xcolor-solarized}
+\renewcommand{\bibsection}{%
+    \chapter{Literatur}
+    %\chapter{\bibname}
+    \prebibhook}
 
 % -------------------------------------------------------- %
 % Draft Watermark                                          %
@@ -79,7 +92,6 @@
 %\usepackage[final]{draftwatermark} % removes watermark
 
 
-
 % -------------------------------------------------------- %
 % TIKZ and PGF                                             %
 %                                                          %
@@ -88,11 +100,13 @@
 % documents might not need to be set globally at all.      %
 % -------------------------------------------------------- %
 \usepackage{tikz}
-\usetikzlibrary{arrows}
+\usetikzlibrary{arrows.meta}
 \usetikzlibrary{graphs}
 \usetikzlibrary{spy}
 \usetikzlibrary{fit}
 \usetikzlibrary{backgrounds}
+\usetikzlibrary{through}
+\usetikzlibrary{patterns}
 \usetikzlibrary{positioning}
 \usetikzlibrary{shapes.misc}
 \usetikzlibrary{shapes.geometric}
@@ -114,6 +128,8 @@
 \pgfplotsset{every axis plot/.append style={%
     line width=0.5pt}}
 \usepgfplotslibrary{colormaps}
+\usepgfplotslibrary{external}
+\tikzexternalize[prefix=cache/,optimize command away=\includepdf]
 
 \usepackage{bytefield}
 
@@ -182,4 +198,17 @@
     breaklines          = true,
     breakatwhitespace   = true,
     tabsize             = 3
+}
+
+\usepackage{minted}
+\setminted{%
+    style=borland,
+    %style=tango,
+    %style=solarizeddark,
+    linenos=true,
+    %bgcolor=solarized-blue!10,
+    %fontseries=lmr,
+    fontfamily=lmtt,
+    linenos=false,
+    fontsize=\small,
 }

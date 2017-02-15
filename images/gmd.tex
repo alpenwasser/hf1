@@ -1,0 +1,11 @@
+\begin{tikzpicture}
+    \draw[arrows={Circle-}] (0  ,0) node[below] {\tiny$1$} -- (0.5,0);
+    \draw[arrows={Circle-}] (0.5,0) node[below] {\tiny$2$} -- (1  ,0);
+    \draw[arrows={Circle-}] (1  ,0) node[below] {\tiny$3$} -- (1.5,0);
+    \draw[arrows={Circle-}] (1.5,0) node[below] {\tiny$4$} -- (2  ,0);
+    \draw[arrows={Circle-}] (2  ,0) node[below] {\tiny$5$} -- (4  ,0);
+    \draw[arrows={Circle-}] (4  ,0) node[below] {\tiny$\frac{n}{2}$} -- (7.5,0);
+    \draw[arrows={Circle-Circle}] (7.5,0) node[below] {\tiny$n-1$} -- (8  ,0) node[below] {\tiny$n$\textcolor{white}{1}};
+
+    \draw[dashed,arrows={Stealth-Stealth}] (0,0.3) -- (4,0.3) node[above] {$b$} -- (8,0.3);
+\end{tikzpicture}

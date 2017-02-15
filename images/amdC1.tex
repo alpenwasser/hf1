@@ -1,0 +1,17 @@
+\begin{tikzpicture}
+    \coordinate [label=left:$P$]             (P) at (-2,0);
+    \coordinate [label=right:$A$]            (A) at ( 2,0);
+    \coordinate                              (Z) at ( 0,0);
+    \coordinate [label=right:$B$]            (B) at (0.667*2,0.745*2);
+    \coordinate [label=above right:$\theta$] (M) at (-1,0);
+
+    % Triangles
+    \draw (P) -- node[midway,below]{$2a$} (A) -- (B) -- cycle;
+    \draw (B) -- (Z);
+
+    % Circle
+    \node [draw] at (Z) [circle through={(B)}] {};
+
+    % Arc for Angle
+    \draw (M) arc (0:24:1);
+\end{tikzpicture}

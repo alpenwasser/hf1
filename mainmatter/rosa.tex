@@ -1,0 +1,1464 @@
+% **************************************************************************** %
+\chapter{Analytische L\"osungen}
+\label{chap:rosa}
+% **************************************************************************** %
+
+% ---------------------------------------------------------------------------- %
+\section{Selbstinduktivit\"at eines geraden, zylindrischen Drahtes}
+\label{sec:selfStraightCylWire}
+% ---------------------------------------------------------------------------- %
+
+\schematic{selfStraightCylWire}
+
+Die magnetische Feldst\"arke am Punkt $P$ aufgrund eines L\"angenelements $dy$
+des Drahtes mit Strong $i$ durchflossenen Drahtes ist:
+
+\begin{equation}
+    \label{eq:sSCW:1}
+    i \cdot \frac{dy}{c^2} \cdot \sin{\theta} 
+    = 
+    \frac{i \cdot a \cdot dy}{\left[ a^2 + (y - b)^2 \right]^{\frac{3}{2}}}
+\end{equation}
+
+\"Uber die  gesamte L\"ange  $l$ des  Drahtes und normiert  auf den  Strom $i$
+integriert ergibt dies:
+
+\begin{equation}
+    \label{eq:sSCW:2}
+    \frac{H}{i}
+    = 
+    \int_0^l 
+    \frac{a \cdot dy}{\left[ a^2 + (y - b)^2 \right]^{\frac{3}{2}}}
+    =
+    \frac{l-b}{a \cdot \sqrt{a^2 - (l-b)^2}} + \frac{b}{a\cdot\sqrt{a^2+b^2}}
+\end{equation}
+
+Als n\"achstes  soll der  magnetische Fluss bestimmt  werden. Dieser berechnet
+sich  \"uber das  Fl\"achenintegral der  magnetischen Flussdichte  $B$, welche
+wiederum aus der magnetischen Feldst\"arke $H$ bestimmt wird gem\"ass:
+
+\begin{equation}
+    \label{eq:sSCW:3}
+    B = H \cdot \mu
+\end{equation}
+
+Wobei  $\mu$   die  magnetische  Permeabilit\"at  des   Mediums  ist,  welches
+vom  magnetischen  Feld durchflossen  wird. Somit  kann  ein Streifen  $d\Phi$
+der  Breite  $dx$  des   magnetischen  Gesamtflusses  berechnet  werden  durch
+Aufintegrieren des H-Feldes \"uber den Streifen der L\"ange $l$ und der Breite
+$dx$:
+
+\begin{equation}
+    \label{eq:sSCW:4}
+    \frac{d\Phi}{i} 
+    = 
+    \frac{dx \cdot \mu}{a} \cdot 
+    \int_0^l 
+    \left[ 
+        \frac{l-b}{\sqrt{a^2 - (l-b)^2}} + \frac{b}{\sqrt{a^2+b^2}}
+    \right]
+    db
+    =
+    \frac{2\mu dx}{a}
+    \left[
+        \sqrt{a^2 + l^2} - a
+    \right]
+\end{equation}
+
+Ersetzt man die  Koordinate $a$ durch $x$ und  integriert anschliessend \"uber
+die  Gesamtfl\"ache  ausserhalb  des  Drahtes  (also  vom  Radius  $\rho$  bis
+unendlich) ergibt dies:
+
+\begin{align}
+    \frac{\Phi}{i} 
+    = 
+    2 \mu \cdot
+    \int_{\rho}^{\infty}
+    \left[ 
+        \frac{\sqrt{x^2+l^2}}{x} - 1
+    \right]
+    dx
+    & =
+    2 \mu \cdot
+    \left[ 
+        \sqrt{x^2 + l^2} - x - l \log{\frac{l + \sqrt{x^2+l^2}}{x}}
+    \right]_{\rho}^{\infty}
+    \label{eq:sSCW:4}
+    \\
+    & =
+    2 \mu \cdot
+    \left[ 
+        l \cdot \log{\frac{l+\sqrt{l^2+\rho^2}}{\rho}} - \sqrt{l^2+\rho^2} + \rho
+    \right]
+    \label{eq:sSCW:5}
+    \\
+    & \approx
+    2 \mu l \left[ 
+        \log{\frac{2l}{\rho}} - 1
+    \right]
+    \label{eq:sSCW:6}
+\end{align}
+
+Gem\"ass    Gleichung   \code{TODO}    ist    dies   der    Anteil   an    der
+Selbstinduktivit\"at,  welcher vom  magnetischen Feld  ausserhalb des  Leiters
+verursacht wird. Zus\"atzlich muss jedoch auch  das Feld im Innern des Leiters
+ber\"ucksichtigt werden.
+
+\schematic{selfStraightCylWireCrossSection}
+
+Die   Feldst\"arke  am   Punkt   $Q   (x,0)$  im   Innern   des  Drahtes   ist
+$\frac{2ix\mu}{\rho^2}$. Der auf den  Strom normierte Fluss in  einem Element des
+Drahtes mit L\"ange $l$ und der Breite $dx$ ist somit
+
+\begin{equation}
+    \label{eq:sSCW:7}
+    \frac{d\Phi}{i} 
+    = 
+    \frac{2ilxdx}{\rho^2}
+\end{equation}
+
+Integration  dieses  Ausdrucks  von  $0$ bis  $\rho$  ergibt  den  Gesamtfluss
+innerhalb des Drahtes:
+
+\begin{equation}
+    \label{eq:sSCW:8}
+    \frac{\Phi}{i} = \frac{\mu \cdot li}{\rho^1}
+    \cdot
+    \int_{-1}^{\rho} 2xdx
+    =
+    li\mu
+\end{equation}
+
+Da die  Feldlinien innerhalb  des Leiters nicht  den Gesamten  Querschnitt des
+Leiters schneiden m\"ussen sie gewichtet  werden, proportional zu der Fl\"ache
+des Leiters, die geschnitten wird:
+
+\begin{equation}
+    \label{eq:sSCW:8}
+    i \cdot L_2 
+    = 
+    \mu l \cdot \int_{0}^{\rho} \frac{2ix}{\rho^2} \cdot \frac{x^2}{\rho^2}dx
+    = 
+    \frac{\mu \cdot li}{2}
+\end{equation}
+
+Somit:
+
+\begin{equation}
+    \label{eq:sSCW:9}
+    L_2 = \frac{\mu l}{2}
+\end{equation}
+
+Zusammenf\"ugen der Gleichungen \ref{eq:sSCW:9} und \ref{eq:sSCW:5} respektive
+\ref{eq:sSCW:6} ergibt:
+
+\begin{align}
+    L 
+    & = 
+    2 \mu \cdot 
+    \left[
+        l \cdot \log{\frac{l+\sqrt{l^2+\rho^2}}{\rho}}
+        - 
+        \sqrt{l^2+\rho^2}
+        +
+        \frac{l}{4}
+        +
+        \rho
+    \right]
+    \label{eq:sSCW:10}
+    \\
+    & \approx
+    2 \mu \cdot 
+    \left[
+        \log{\frac{2l}{\rho}} - \frac{3}{4}
+    \right]
+    \label{eq:sSCW:11}
+\end{align}
+
+Wenn  das  Magnetfeld  innerhalb  des  Leiters  vernachl\"assigt  werden  kann
+(hohe   Frequenzen   \tikz\draw[-{Stealth}](0,0)  --   (0.5,0);   Skin-Effekt,
+vernachl\"assigbarer Drahtdurchmesser), vereinfacht sich \ref{eq:sSCW:11} zu:
+
+\begin{equation}
+    \label{eq:sSCW:12}
+    L_2 
+    \approx 
+    2 \mu \cdot 
+    \left[
+        \log{\frac{2l}{\rho}} - 1
+    \right]
+\end{equation}
+
+
+% ---------------------------------------------------------------------------- %
+\section{Gegenseitige Induktivit\"at von zwei parallelen Dr\"ahten}
+\label{sec:mutualStraightWires}
+% ---------------------------------------------------------------------------- %
+
+\schematic{mutualStraightWires}
+
+Die   gegenseitige  Induktivit\"at   zweier  Dr\"ahte   im  Abstand   $d$  mit
+gegenl\"aufigem Strom $i$ berechnet sich  \"uber den auf $i$ normierten Fluss,
+welcher den jeweils anderen Leiter durchfliesst. Dazu integriert man Gleichung
+\ref{eq:sSCW:4}  von $d$  bis $\infty$  anstatt von  $\rho$ bis  $\infty$, was
+folgenden Ausdruck ergibt:
+
+\begin{align}
+    M
+    & =
+    2 \mu
+    \left[
+        l \cdot \log{\frac{l+\sqrt{l^2+d^2}}{d}} - \sqrt{l^2 + d^2} + d
+    \right]
+    \label{eq:mSW:1}
+    \\
+    & \approx
+    2 \mu l
+    \left[
+        \log{\frac{2l}{d}} - 1 + \frac{d}{l}
+    \right]
+    \label{eq:mSW:2}
+\end{align}
+
+\ref{eq:mSW:1}   und    \ref{eq:mSW:2}   sind   sehr   genau,    solange   der
+Leiterquerschnitt  im  Vergleich  zum  Abstand  $d$  vernachl\"assigbar  klein
+ist. Ihre Genauigkeit ist ebenfalls  noch zufriedenstellend, solange $l$ gross
+im Vergleich zu $d$, selbst wenn  der Leiterquerschnitt gross ist im Vergleich
+zu $d$.
+
+
+% ---------------------------------------------------------------------------- %
+\section{Selbstinduktivit\"at eines Stromkreises}
+\label{sec:selfReturnCircuit}
+% ---------------------------------------------------------------------------- %
+
+Zur  Bestimmung   der  Selbstinduktivit\"at  eines   geschlossenen  Stromkreis
+gem\"ass    Abbildung     \ref{fig:mutualStraightWires}    muss     man    die
+Selbstinduktivit\"at   jeder    einzelnen   Litze   und    ihre   gegenseitige
+Induktivit\"aten miteinander verrechnen:
+
+\begin{equation}
+    \label{eq:sRC:1}
+    L_{tot} = 2 L_{Litze} - 2 M
+\end{equation}
+
+Nimmt  man  die  approximierten  Werte  aus  den  entsprechenden  Gleichungen,
+erh\"alt man hierf\"ur:
+
+\begin{equation}
+    \label{eq:sRC:2}
+    L 
+    = 
+    4 \mu_0 l 
+    \left[ 
+        \log{\frac{d}{\rho}} + \frac{\mu_r}{4}
+    \right]
+\end{equation}
+
+% ---------------------------------------------------------------------------- %
+%\section{Gegenseitige Induktivit\"at zweier paralleler Dr\"ahte nach Neumann's Formel}
+%\label{sec:neumann
+% ---------------------------------------------------------------------------- %
+
+% ---------------------------------------------------------------------------- %
+\section{Gegenseitige Induktivit\"at zweier linearer Leiter in einer geraden Linie}
+\label{sec:mutualInStraightLine}
+% ---------------------------------------------------------------------------- %
+
+\schematic{mutualInStraightLine}
+
+Die    Selbstinduktivit\"at   der    Leitung   $AB$    wurde   in    Abschnitt
+\ref{sec:selfStraightCylWire} bestimmt  durch die Integration  des Magnetfelu
+\"uber der  Fl\"ache $ABB'A$,  wobei $A'$ und  $B'$ ins  Unendliche verschoben
+werden.
+
+Analog dazu kann die gegenseitige Induktion  der Leiter $AB$ und $BC$ bestimmt
+werden, indem  das vom Strom  in $AB$  verursachte Magnetfeld in  der Fl\"ache
+$S_2 = BCC'B'$  integriert wird (wobei $B'$ und $C'$  ebenfalls ins Unendliche
+verschoben werden).
+
+Das Magnetfeld im Punkt $P (x,y)$, verursacht durch Strom $i$ in $AB$, lautet:
+
+\begin{equation}
+    \label{eq:mISL:1}
+    H_{P}
+    =
+    \frac{i\mu_0}{x}
+    \left[
+        \frac{y}{\sqrt{x^2+y+2}} - \frac{y - l}{\sqrt{x^2+(y-l)^2}}
+    \right]
+\end{equation}
+
+Der Gesamte auf $i$ normierte magnetische Fluss in $S_2$ ist somit:
+
+\begin{align}
+    \frac{\Phi}{i}
+    & =
+    \mu_0 
+    \int_{0}^{\infty} \frac{dx}{x} \int_{0}^{l+m}
+    \left[
+        \frac{y dy}{\sqrt{x^2+y^2}} - \frac{(y-l) dy}{\sqrt{x^2+(y-l)^2}}
+    \right]
+    \nonumber
+    \\
+    &=
+    \mu_0
+    \int_{0}^{\infty}
+    \left[
+        \sqrt{x^2 + (l+m)^2)} - \sqrt{x^2+l^2} - \sqrt{x^2+m^2}+x
+    \right]
+    \frac{dx}{x}
+    \nonumber
+    \\
+    & = \mu_0
+    \Bigg[
+        \sqrt{x^2 + (l+m)^2} - \sqrt{x^2+l^2} - \sqrt{x^2+m^2}
+        \nonumber
+        \\
+        & ~~~~~~~~~   + x - l \cdot \log{\frac{l+m+\sqrt{x^2+(l+m)^2}}{l+\sqrt{x^2+l^2}}}
+        \nonumber
+        \\
+        & ~~~~~~~~~   - m \cdot \log{\frac{l+m+\sqrt{x^2+(l+m)^2}}{m+\sqrt{x^2+l^2}}} ~
+    \Bigg]_0^{\infty}
+    \label{eq:mISL:2}
+    \\
+    & \approx
+    \mu_0 \cdot \left[ l \cdot \log{\frac{l+m}{l}} + m \cdot \log{\frac{l+m}{m}} \right]
+    \label{eq:mISL:3}
+\end{align}
+
+Die Ann\"aherung \ref{eq:mISL:3}  ist von guter Qualit\"at,  solange $m$ nicht
+allzu gross wird und der Radius des Leiters $BC$ klein ist.
+
+% ---------------------------------------------------------------------------- %
+%\section{Definition von Selbstinduktivit\"at in einem offenen Kreis}
+% ---------------------------------------------------------------------------- %
+
+% ---------------------------------------------------------------------------- %
+\section{Selbstinduktivit\"at einer geraden Rechteckstange}
+\label{sec:selfRectBar}
+% ---------------------------------------------------------------------------- %
+
+Die   Selbstinduktivit\"at  einer   geraden   Rechteckstange  entspricht   der
+gegenseitigen Induktivit\"at zweier gerader Filamente gleicher L\"ange, welche
+im  Abstand  der  geometrischen  Mitteldistanz  $R$  der  Querschnittsfl\"ache
+zueinander liegen.
+
+\schematic{rectangleCrossSection}
+
+Die approximierte  Formel f\"ur die Selbstinduktivit\"at  einer Rechteckstange
+ist somit:
+
+\begin{equation}
+    L = 2 \mu_0 l \left[ \log{\frac{2l}{R}} - 1 + \frac{R}{l} \right]
+    \label{eq:sRB:1}
+\end{equation}
+
+Maxwell  gibt die  Formel f\"ur  $R$  f\"ur ein  Rechteck mit  Seiten $a$  und
+$b$  im  zweiten Band  von  \emph{A  Treatise  on Electricity  and  Magnetism}
+\cite{ref:maxwell:gmd} mit dem folgenden Ausdruck an:
+
+\begin{align}
+    \log{R}
+    & =
+    \log{\sqrt{a^2+b^2}} 
+    \nonumber\\
+    & - \frac{1}{6} \cdot \frac{a^2}{b^2} \cdot \log{\sqrt{1+\frac{b^2}{a^2}}}
+    - \frac{1}{6} \cdot \frac{b^2}{a^2} \cdot \log{\sqrt{1+\frac{a^2}{b^2}}}
+    \nonumber\\
+    & + \frac{2}{3} \cdot \frac{a}{b}\tan^{-1}{\frac{b}{a}}
+    + \frac{2}{3} \cdot \frac{b}{a}\tan^{-1}{\frac{a}{b}}
+    - \frac{25}{12}
+    \label{eq:sRB:2}
+\end{align}
+
+Es kann gezeigt werden, dass im Falle eines Rechtecks die folgende Beziehung stets
+in sehr guter N\"aherung f\"ur alle $\alpha$ und $\beta$ zutrifft:
+
+\begin{equation}
+    \label{eq:sRB:3}
+    R = 0.2235 (\alpha + \beta)
+\end{equation}
+
+Tabelle   \ref{tab:meanDist}  fasst   einige  Seitenverh\"altnisse   in  einem
+Vergleich mit $R$ und dem Verh\"altnis $\frac{R}{\alpha + \beta}$ zusammen.
+
+\begin{table}
+    \centering
+    \caption{%
+        $\alpha$ und $\beta$  sind die Seiten des Rechtecks,  $R$ die mittlere
+        geometrische Distanz seiner Querschnittsfl\"ache.%
+    }
+    \label{tab:meanDist}
+    \begin{tabular}{rclcc}
+        \toprule
+        $\alpha$ & $\div$ & $\beta$ & $R$ & $\frac{R}{\alpha + \beta}$ \\
+        \midrule
+        $1$    & $\div$ & $1$     & $0.44705 \alpha$ & $0.22353$ \\
+        $1.25$ & $\div$ & $1$  & $0.40235 \alpha$ & $0.22353$ \\
+        $1.5$  & $\div$ & $1$   & $0.37258 \alpha$ & $0.22355$ \\
+        $2$    & $\div$ & $1$     & $0.33540 \alpha$ & $0.22360$ \\
+        $4$    & $\div$ & $1$     & $0.27961 \alpha$ & $0.22369$ \\
+        $10$   & $\div$ & $1$    & $0.24596 \alpha$ & $0.22360$ \\
+        $20$   & $\div$ & $1$    & $0.23463 \alpha$ & $0.22346$ \\
+        $1$    & $\div$ & $0$     & $0.22315 \alpha$ & $0.22315$ \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+Es ist somit m\"oglich, die  komplizierte Formel \ref{eq:sRB:2} f\"ur $R$ ohne
+grossen Verlust an Pr\"azision  durch die Vereinfachte Formel \label{eq:sRB:1}
+in Gleichung \ref{eq:sRB:3} zu ersetzen. Eingesetzt ergibt dies:
+
+\begin{equation}
+    \label{eq:sRB:4}
+    L 
+    = 
+    2 \mu_0 l \left[ \log{\frac{2l}{\alpha + \beta}} 
+    + \frac{1}{2} 
+    + \frac{0.2235(\alpha + \beta)}{l} \right]
+\end{equation}
+
+
+% ---------------------------------------------------------------------------- %
+\section{Zwei parallele Rechteckstangen -- Gegenseitige und Eigeninduktivit\"at}
+\label{sec:mutualRectBar}
+% ---------------------------------------------------------------------------- %
+
+\schematic{rectangleTwoCrossSection}
+
+Die gegenseitige Induktivit\"at zweiter quadratischer oder rechteckiger Leiter
+ist  gleich  der  gegenseitigen   Induktivit\"at  zweier  paralleler  Dr\"ahte
+gleicher  L\"ange im  Abstand  der mittleren  geometrischen  Distanz der  zwei
+Fl\"achen voneinander. Wir nehmen somit  Gleichung \ref{eq:mSW:2} und ersetzen
+$d$ durch die m.g.D. $R$ der beiden Rechteckstangen.
+
+\begin{equation}
+    M
+    =
+    2 \mu l
+    \left[
+        \log{\frac{2l}{R}} - 1 + \frac{R}{l}
+    \right]
+    \label{eq:mRB:1}
+\end{equation}
+
+Im   Falle    von   quadratischen   Querschnitten   entspricht    die   g.m.D.
+in    guter    N\"aherung    der    Distanz    der    Zentren    der    beiden
+Quadrate. Im  Falle  von  parallelen   Quadraten  (oberer  Fall  in  Abbildung
+\ref{fig:rectangleTwoCrossSection}) ist die g.m.D.  ein bisschen gr\"osser als
+der Abstand der  Zentren, im Falle von diagonal gewinkelten  Quadraten ist die
+g.m.D. ein wenig kleiner als der Abstand der Zentren.
+
+
+% ---------------------------------------------------------------------------- %
+\section{Selbstinduktivit\"at eines Quadrats}
+\label{sec:selfSquare}
+% ---------------------------------------------------------------------------- %
+
+\schematic{selfSquare}
+
+Die Selbstinduktivit\"at  eines Quadrates  setzt sich  zusammen aus  der Summe
+der  Selbstinduktivit\"at  der  einzelnen Seiten  weniger  ihre  gegenseitigen
+Induktivit\"aten,  wobei die  gegenseitige Induktivit\"at  zweier rechtwinklig
+stehender Seiten verschwindet\footnotemark:
+
+\begin{equation}
+    \label{eq:sS:1}
+    L = 4 L_1 - 4M
+\end{equation}
+
+\footnotetext{%
+    Gem\"ass der  Neumann'schen Formel  f\"ur die  gegenseitige Induktivit\"at
+    zweier  Str\"ome  $\vec{I_1}$  und   $\vec{I_2}$,  welche  durch  separate
+    Stromkreise fliessen:
+
+    \begin{equation}
+        \label{eq:sS:2}
+        M = \frac{\mu_0}{4\pi} \oint \oint \frac{d\vec{I_1} \cdot d\vec{I_2}}{r}
+    \end{equation}
+
+    Das   Skalarprodukt   zweier    normal   zueinander   stehender   Vektoren
+    ist nat\"urlich null.
+}
+
+
+Wir ben\"otigen also die Gleichunge \ref{eq:sSCW:10} und \ref{eq:mSW:1}, wobei
+$l$, respektive $d$ durch $a$ ersetzt werden. Es folgt:
+
+
+\begin{align}
+    L 
+    & = 
+    2a \mu 
+    \left[ 
+        \log{\frac{a + \sqrt{a^2+\rho^2}}{\rho}} - \sqrt{1-\frac{\rho^2}{a^2}} + \frac{1}{4} + \frac{\rho}{a}
+    \right]
+    \label{eq:sS:3}
+    \\
+    M 
+    & = 
+    2a \mu 
+    \left[ 
+        \log{\frac{a + \sqrt{2a^2}}{a}} - \sqrt{2} + 1
+    \right]
+    \label{eq:sS:4}
+\end{align}
+
+Wenn  die  Seitenl\"ange   $a$  des  Quadrats  gross  ist   im  Vergleich  zum
+Drahtdurchmesser  $\rho$, kann  $\frac{\rho^2}{a^2}$ vernachl\"assigt  werden.
+
+\begin{align}
+    L_1 - M
+    & =
+    2a\mu_0 
+    \left[
+        \log{\frac{2a}{\rho(1+\sqrt{2})}} - 1.75 + \sqrt{2} + \frac{\rho}{a}
+    \right]
+    \label{eq:sS:5}
+    \\
+    L 
+    &= 
+    4(L_1 - M) 
+    =
+    8a\mu_0
+    \left[
+        \log{\frac{a}{\rho}}  - \log{\frac{1+\sqrt{2}}{2}} + \frac{\rho}{a} - 0.3358
+    \right]
+    \label{eq:sS:5}
+    \\
+    L
+    & =
+    8a \mu_0
+    \left[ 
+        \log{\frac{a}{\rho}} + \frac{\rho}{a} - 0.524
+    \right]
+\end{align}
+
+
+% ---------------------------------------------------------------------------- %
+\section{Selbstinduktivit\"at eines Rechtecks}
+\label{sec:selfRect}
+% ---------------------------------------------------------------------------- %
+
+Es  werden die  beiden  F\"alle eines  Rechtecks aus  rundem  Draht und  eines
+Rechtecks aus rechteckigem Draht betrachtet.
+
+% ---------------------------------------------------------------------------- %
+\subsection{Runder Drahtquerschnitt}
+\label{subsec:selfRect:round}
+% ---------------------------------------------------------------------------- %
+\schematic{selfRectRound}
+
+Die Selbstinduktivit\"at eines Rechtecks mit Seitenl\"angen $a$ und $b$ ist:
+
+\begin{equation}
+    \label{eq:sRro:1}
+    L 
+    = 
+    2 
+    \left[
+        L_a + L_b - M_a - M_b
+    \right]
+\end{equation}
+
+Wobei  $L_a$  und  $L_b$  die Selbstinduktivit\"aten  der  beiden  Seiten  $a$
+respektive $b$  sind, und $M_a$  und $M_b$ die  gegenseitigen Induktivit\"aten
+der  beiden jeweils  einander gegen\"uberliegenden  Seiten $a$  respektive $b$
+(also  linke Seite  $a$ auf  rechte Seite  $a$ und  umgekehrt, daher  noch mit
+Faktor $2$ multipliziert; analog f\"ur $b$).
+
+Erneut bedienen wir uns der Formeln \ref{eq:sSCW:10} und \ref{eq:mSW:1}, unter
+Vernachl\"assigung der quadratischen Terme. Eingesetzt in \ref{eq:sRro:1}:
+
+\begin{align}
+    L 
+    & = 
+    4 \mu_0
+    \left[
+        a \log{\frac{2a}{\rho}} - \frac{3}{4}a + \rho
+    \right]
+    + 4 \mu_0
+    \left[
+        b \log{\frac{2b}{\rho}} - \frac{3}{4}b + \rho
+    \right]
+    \nonumber\\
+    & -
+    4 \mu_0
+    \left[
+        a\log{\frac{a+\sqrt{a^2+b^2}}{b}} - \sqrt{a^2+b^2} + b
+    \right]
+    \nonumber\\
+    & -
+    4 \mu_0
+    \left[
+        b\log{\frac{b+\sqrt{a^2+b^2}}{a}} - \sqrt{a^2+b^2} + a
+    \right]
+    \label{eq:sRro:2}
+\end{align}
+
+Ersetzt man den  Term $\sqrt{a^2+b^2}$ durch die Diagonale  $d$, l\"asst sich
+dies vereinfachen zu:
+
+\begin{equation}
+    \label{eq:sRro:3}
+    L
+    =
+    \left[
+        (a+b) \log{\frac{2ab}{\rho}} - a\log{(a+d)} - b\log{(b+d)} - \frac{7}{4}(a+b)+2(d+\rho)
+    \right]
+\end{equation}
+
+
+% ---------------------------------------------------------------------------- %
+\subsection{Rechteckiger Drahtquerschnitt}
+\label{subsec:selfRect:rect}
+% ---------------------------------------------------------------------------- %
+\schematic{selfRect}
+
+Gem\"ass Abbildung  \ref{fig:selfRect} besteht  der Leiter aus  einem Rechteck
+mit  \"ausseren  Seitenl\"angen $a$  und  $b$,  und  der Querschnitt  hat  die
+Kantenl\"angen $\alpha$ und $\beta$.
+
+Setzt man  $a$ und  $b$ in den  Gleichungen \ref{eq:sRB:4}  und \ref{eq:mSW:1}
+f\"ur  die L\"ange  der  Leiter bzw.  deren Abstand  ein,  ergeben sich  f\"ur
+die  Selbstinduktivit\"at   und  die  Gegeninduktivit\"at  f\"ur   die  Seiten
+$a$\footnotemark:
+
+\footnotetext{Analog werden nat\"urlich $L_b$ und $M_b$ berechnet.}
+
+\begin{align}
+    L_a
+    & =
+    2
+    \left[
+        a \log{\frac{2a}{\alpha + \beta}} + \frac{a}{2} + 0.2235(\alpha+\beta)
+    \right]
+    \label{eq:sRre:1}
+    \\
+    M_a
+    & =
+    2
+    \left[
+        a \log{\frac{a+\sqrt{a^2+b^2}}{b}} - \sqrt{a^2+b^2} + b
+    \right]
+    \label{eq:sRre:2}
+\end{align}
+
+Wie  im Falle  des runden  Leiterquerschnitts gilt  $L =  2(L_a+L_b-M_a-M_b)$,
+womit die gesamte Induktivit\"at auf folgenden Ausdruck kommt:
+
+\begin{align}
+    L
+    & =
+    4
+    \left[
+        a \log{\frac{2ab}{(\alpha 
+        + \beta)(a + \sqrt{a^2+b^2})} 
+        + \frac{a}{2} - b + \sqrt{a^2+b^2} 
+        + 0.2235(\alpha + \beta)_a}
+    \right]
+    \nonumber\\
+    & +
+    4
+    \left[
+        b \log{\frac{2ab}{(\alpha 
+        + \beta)(b + \sqrt{a^2+b^2})} 
+        + \frac{b}{2} - a + \sqrt{a^2+b^2} 
+        + 0.2235(\alpha + \beta)_b}
+    \right]
+    \label{eq:sRre:3}
+\end{align}
+
+$(\alpha+\beta)_a$  und $(\alpha+\beta)_b$  sind dabei  die Leiterquerschnitte
+entlang  der  Rechtecksseiten  $a$   respektive  $b$. Substituiert  man  $d  =
+\sqrt{a^2+b^2}$ und  setzt voraus, dass $(\alpha+\beta)_a  = (\alpha+\beta)_b$
+(dass also  der Leiterquerschnitt  \"uber das  gesamte Rechteck  uniform ist),
+vereinfacht sich Gleichung \ref{eq:sRre:3} zu:
+
+\begin{equation}
+    \label{eq:sRre:4}
+    L
+    =
+    4
+    \left[
+        (a+b) 
+        \log{\frac{2ab}{\alpha+\beta}} 
+        - a\log(a+d) 
+        - b\log{(b+d)} 
+        - \frac{a+b}{2} 
+        + 2d 
+        + 0.447(\alpha+\beta)
+    \right]
+\end{equation}
+
+Im Falle eines Quadrats ($a=b$) ergibt sich:
+
+\begin{equation}
+    \label{eq:sRre:5}
+    L
+    =
+    8a
+    \left[
+        \log{\frac{a}{\alpha+\beta}} 
+        + 0.2235\frac{\alpha+\beta}{a}+0.726
+    \right]
+\end{equation}
+
+Im  zus\"atzlichen Falle  eines  quadratischen  Leiterquerschnitts ($\alpha  =
+\beta$):
+
+\begin{equation}
+    \label{eq:sRre:6}
+    L
+    =
+    8a
+    \left[
+        \log{\frac{a}{\alpha}} 
+        + 0.447\frac{\alpha}{a}+0.33
+    \right]
+\end{equation}
+
+
+% ---------------------------------------------------------------------------- %
+\section{Gegenseitige Induktivit\"at zweier gleicher parelleler Rechtecke}
+\label{sec:mutualTwoEqualRect}
+% ---------------------------------------------------------------------------- %
+
+\schematic{mutualTwoEqualRect}
+
+Die  gegenseitige  Induktivit\"at  zweiter gleicher  Rechtecke  $1,2,3,4$  und
+$5,6,7,8$  im  konstanten  Abstand  $d$   setzt  sich  aus  den  gegenseitigen
+Induktivit\"aten   der   verschiedenen   Seiten   zusammen. Auch   hier   wird
+Formel  \ref{eq:mSW:1}  als  Ausgangspunkt genommen. F\"ur  die  verschiedenen
+gegenseitigen Induktivit\"aten erh\"alt man:
+
+\begin{align}
+    M
+    & =
+    2 (M_{15} - M_{17}) + 2(M_{26} - M_{28})
+    \label{eq:mTER:1}\\
+    M_{15}
+    & =
+    2 
+    \left[
+        b \log{\frac{b + \sqrt{b^2+d^2}}{d}} - \sqrt{b^2+d^2} + d
+    \right]
+    \label{eq:mTER:2}\\
+    M_{17}
+    & =
+    2 
+    \left[
+        b \log{\frac{b + \sqrt{a^2+b^2+d^2}}{\sqrt{a^2+d^2}}} - \sqrt{a^2+b^2+d^2} + \sqrt{a^2+d^2}
+    \right]
+    \label{eq:mTER:3}\\
+    M_{26}
+    & =
+    2 
+    \left[
+        a \log{\frac{a + \sqrt{a^2+d^2}}{d}} - \sqrt{a^2+d^2} + d
+    \right]
+    \label{eq:mTER:4}\\
+    M_{28}
+    & =
+    2 
+    \left[
+        a \log{\frac{a + \sqrt{a^2+b^2+d^2}}{\sqrt{b^2+d^2}}} - \sqrt{a^2+b^2+d^2} + \sqrt{b^2+d^2}
+    \right]
+    \label{eq:mTER:5}
+\end{align}
+
+Man  beachte, dass  es  hier  um die  gegenseitige  Induktivit\"at der  beiden
+Rechteckschlaufen   geht,  und   nicht   um  die   Selbstinduktivit\"at. Daher
+interessieren $M_{13}$, $M_{24}$, $M_{57}$ und $M_{68}$ nicht.
+
+F\"ugt man die Terme zusammen, ergibt sich f\"ur $M$:
+
+
+\begin{align}
+    M
+    =
+    4
+    & \Bigg[
+        a 
+        \log{\left( 
+            \frac{a + \sqrt{a^2+d^2}}{a + \sqrt{a^2+b^2+d^2}} \cdot \frac{\sqrt{b^2+d^2}}{d}
+        \right)}
+    \nonumber\\
+    & +
+        b 
+        \log{\left( 
+            \frac{b + \sqrt{b^2+d^2}}{b + \sqrt{a^2+b^2+d^2}} \cdot \frac{\sqrt{a^2+d^2}}{d}
+        \right)}
+    \Bigg]
+    \nonumber\\
+    +
+    & \bigg[
+        \sqrt{a^2+b^2+d^2} - \sqrt{a^2+d^2} - \sqrt{b^2+d^2} + d
+    \bigg]
+    \label{eq:mTER:6}\\
+\end{align}
+
+Im Falle eines Quadrats mit $b=a$ vereinfacht sich dies zu:
+
+\begin{align}
+    M 
+    & =
+    8
+    a \log{\left(
+        \frac{a + \sqrt{a^2+d^2}}{a + \sqrt{2a^2+d^2}} 
+        \cdot
+        \frac{\sqrt{a^2+d^2}}{d}
+    \right)}
+    \nonumber\\
+    & +
+    8
+    \bigg[
+        \sqrt{2a^2+d^2} - 2\sqrt{a^2+d^2} + d
+    \bigg]
+    \label{eq:mTER:7}\\
+\end{align}
+
+
+% ---------------------------------------------------------------------------- %
+\section{Eigeninduktivit\"at und Gegenseitige Induktivit\"at d\"unner Streifen}
+\label{sec:thinTapes}
+% ---------------------------------------------------------------------------- %
+
+\todo[inline]{%
+    Dieser Abschnitt  sollte meines Erachtens besser  strukturiert werden. Die
+    mathematischen  Exkurse   zum  arithmetischen  und   geometrischen  Mittel
+    st\"oren  den Leserfluss. Andererseits  sind sie  f\"ur das  Verst\"andnis
+    erforderlich.%
+}
+
+\begin{minipage}{0.5\textwidth}
+    \schematic{tapeSingle}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+    \schematic{tapeEdge}
+\end{minipage}
+
+\schematic{tapesApart1}
+
+\begin{minipage}{0.5\textwidth}
+    \schematic{tapesApart2}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+    \schematic{tapesApart3}
+\end{minipage}
+
+Die Selbstinduktivit\"at  eines d\"unnen Streifens  vernachl\"assigbarer Dicke
+mit L\"ange  $l$ und  Breite $b$ ist  gleich der  gegenseitigen Induktivit\"at
+zweier  Leiter  im  Abstand  der   mittleren  geometrischen  Distanz  $R$  des
+Querschnitts  des Streifens  (siehe Abschnitt  \ref{sec:selfRectBar} ab  Seite
+\pageref{sec:selfRectBar}). Es  gilt  $\log{R_1}   =  \log{b}  -  \frac{3}{2}$
+bzw. $R_1 = 0.22313b$.
+
+Vernachl\"assigt  man  die Breite  des  Streifens  im Verh\"altnis  zu  seiner
+L\"ange in Formel  \ref{eq:mSW:2}, und setzt $R_1$ f\"ur $d$  ein, ergibt dies
+f\"ur die Situation aus Abbildung \ref{fig:tapeSingle}:
+
+\begin{equation}
+    \label{eq:tT:1}
+    L = 2l \left[\log{\frac{2l}{R_1}} - 1 \right]
+      = 2l \left[\log{\frac{2l}{b}}   + \frac{1}{2} \right]
+\end{equation}
+
+Sind zwei Streifen in der gleichen  Ebene Kante an Kante platziert, ohne dabei
+leitenden Kontakt  herzustellen, wie in Abbildung  \ref{fig:tapeEdge} gezeigt,
+muss  die  mittlere  geometrische  Distanz des  einen  Streifens  zum  anderen
+eingesetzt werden ($R_2 = 0.89252b$).
+
+\begin{equation}
+    \label{eq:tT:2}
+    M = 2l \left[ \log{\frac{2l}{R_2}} - 1 \right]
+      = 2l \left[ \log{\frac{2l}{b}} - 0.8863 \right]
+\end{equation}
+
+F\"ur  einen  geschlossenen  Stromkreis  aus zwei  Streifen  ist  die  gesamte
+Selbstinduktivit\"at:
+
+\begin{alignat}{3}
+    L &= 2L_1 - 2M  \; &=& \; 4l \log{\frac{R_2}{R_1}} \nonumber\\
+      &= 4l \log{4} \; &=& \; 5.545 l
+    \label{eq:tT:3}
+\end{alignat}
+
+Wenn  die  beiden  Streifen  nicht  in  der  gleichen  Ebene  liegen,  sondern
+in  zwei   verschiedenen  zueinander  parallelen  Ebenen,   wie  in  Abbildung
+\ref{fig:tapesApart2}  dargestellt, berechnet  sich die  geometrische mittlere
+Distanz $R_2$ zwischen den beiden Streifen gem\"ass:
+
+\begin{equation}
+    \label{eq:tT:4}
+    \log{R_2} 
+    = \frac{d^2}{b^2} \log{d} + \frac{1}{2} \left(1-\frac{d^2}{b^2}\right)
+    \log{(b^2+d^2)} + 2\frac{d}{b} \tan^{-1}{\frac{b}{d}} - \frac{3}{2}
+\end{equation}
+
+Im  vereinfachten Fall  von Abbildung  \ref{fig:tapesApart3} mit  $d=b$ ergibt
+sich f\"ur Formel \ref{eq:tT:4}:
+
+
+\begin{equation}
+    \label{eq:tT:5}
+    \log{R_2} = \log{b} + \frac{\pi}{2} - \frac{3}{2}
+\end{equation}
+
+Mit der nach wie vor g\"ultigen  Beziehung $\log{R_1} = \log{b} - \frac{3}{2}$
+f\"ur den Fall eines einzelnen Streifens erh\"alt man:
+
+\begin{equation}
+    \label{eq:tT:6}
+    \log{\frac{R_2}{R_1}} = \frac{\pi}{2}
+\end{equation}
+
+Womit sich f\"ur die gesamte Induktivit\"at ergibt:
+
+\begin{equation}
+    \label{eq:tT:6}
+    L = 2L_1 - 2M = 4l \log{\frac{R_2}{R_1}} = 4l\frac{\pi}{2} = 2\pi l
+\end{equation}
+
+
+% ---------------------------------------------------------------------------- %
+%\section{Anwendung: Shunts mit niedriger Induktivit\"at}
+% ---------------------------------------------------------------------------- %
+
+% ---------------------------------------------------------------------------- %
+\subsection{Die mittlere geometrische Distanz eines Streifens}
+\label{subsec:gmd}
+% ---------------------------------------------------------------------------- %
+
+Im  Folgenden  soll  eine  genauere  Formel  f\"ur  die  Induktivit\"at  eines
+Streifens  hergeleitet werden,  unter  Benutzung  der mittleren  geometrischen
+Distanz und der mittleren arithmetischen Distanz.
+
+Zur Bestimmung der Selbstinduktivit\"at eines d\"unnen, geraden Streifens kann
+man  sich  der  Tatsache  behelfen,  dass  die  gesamte  Induktivit\"at  einer
+Leiterkonfiguration gleich  der Summe  aller einzelnen  Induktivit\"aten ihrer
+Komponenten ist  (die Summe  der Induktivit\"aten  aller Komponenten  auf sich
+selbst und auf alle anderen Komponenten).
+
+\schematic{gmd}
+
+Zerlegt man den  Streifen in $n$ Teilstreifen, wie  in Abbildung \ref{fig:gmd}
+dargestellt,  tr\"agt jedes  Element  $\frac{1}{n}$ des  gesamten Stromes  und
+es  ergeben  sich $n^2$  Induktivit\"aten  insgesamt. Diese  m\"ussen nun  auf
+vern\"unftige Art miteinander verrechnet werden.
+
+Die exakte Formel \ref{eq:mSW:1} f\"ur die gegenseitige  Induktivit\"at zweier
+Leiter kann umgeschrieben werden als
+
+\begin{equation}
+    M
+    =
+    2 \mu
+    \left[
+        l \cdot \log{l+\sqrt{l^2+d^2}} - l\log{d} - \sqrt{l^2 + d^2} + d
+    \right]
+    \label{eq:gmd:1}
+\end{equation}
+
+\todo[noline]{Noch unklar, weshalb dies die Mittelwerte sind}
+
+Es  stellt sich  heraus, dass  diese  Gleichung zur  Bestimmung des  gesuchten
+Ausdrucks gemittelt  werden muss. Der  Mittelwert von $\log{d}$  resultiert in
+der bereits angetroffenen mittleren  \emph{geometrischen} Distanz, wogegen die
+Mittelung von  $d$ und  $d^2$ \"uber  die \emph{arithmetische}  respektive die
+\emph{quadratische arithmetische} Mittelung bestimmt wird.
+
+Der Durchschnitt von $\log{d}$ f\"ur $n$ Teilstreifen berechnet sich gem\"ass:
+
+\begin{align}
+    \frac{1}{n}
+    \bigg[
+        \log{d_1} + \log{d_2} + \log{d+3} + ... + \log{d_n}
+    \bigg]
+    &=
+    \frac{1}{n}
+    \log{\bigg(
+        d_1 \cdot d_2 \cdot d_3 \cdot ... \cdot d_n 
+    \bigg)}
+    \nonumber\\
+    &=
+    \log{\sqrt[\leftroot{2}n]{d_1 d_2 d_3 ... d_n}}
+    \nonumber\\
+    &=
+    \log{R}
+    \label{eq:gmd:2}
+\end{align}
+
+
+% ---------------------------------------------------------------------------- %
+\subsection{Die mittlere arithmetische Distanz eines Streifens}
+\label{subsec:amd}
+% ---------------------------------------------------------------------------- %
+
+\schematic{amd}
+
+Zuerst  bestimmen wir  die arithmetische  mittlere Distanz  $S_1$ des  Punktes
+$P$  von  allen   anderen  Punkten  der  Linie   $AB$. Zuerst  betrachten  wir
+das  Liniensegment  links  von  $P$. Die mittlere  arithmetische  Distanz  von
+$P$  zu   allen  Punkten  dieses  Segments   ist  $\frac{c}{2}$. Die  mittlere
+arithmetische Distanz  von $P$ zu  allen Punkten  im rechten Segment  $PB$ ist
+$\frac{b-c}{2}$. F\"ur die gesamte Linie $AB$ ergibt sich somit:
+
+\todo[noline]{%
+    Woher  diese  Gleichung  pl\"otzlich  kommt,   ist  mir  noch  nicht  ganz
+    klar: Begr\"undung suchen.%
+}
+
+\begin{align}
+    b \cdot S_1
+    &=
+    \frac{b-c}{2}(b-c) + \frac{c}{2}c = \frac{(b-c)^2}{2}+\frac{c^2}{2}
+    \nonumber\\
+    S_1
+    &=
+    \frac{b}{2} - c + \frac{c^2}{2}
+    \label{eq:amd:1}
+\end{align}
+
+Zur Bestimmung der mittleren arithmetischen Distanz aller Punkte des Streifens
+vom Streifen bzw. der mittleren  arithmetischen Distanz des Streifens von sich
+selbst  muss $S_1$  \"uber  den Streifen  integriert werden. Substituiert  man
+$c=x$:
+
+\begin{align}
+    bS_2 
+    =
+    \int_0^b
+    \left(
+        \frac{b}{2} - x + \frac{x^2}{b}
+    \right)dx
+    =
+    \left[\frac{bx}{2}-\frac{x^2}{2} + \frac{x^3}{3b}\right]_0^b
+    &=
+    \frac{b^2}{3}
+    \nonumber\\
+    S_2
+    &=
+    \frac{b}{3}
+    \label{eq:amd:2}
+\end{align}
+
+Als   n\"achstes   wollen   wir  die   mittlere   quadratische   arithmetische
+Distanz\footnotemark  $S_1^2$  des  Punktes $P$  vom  Streifen  bestimmen. Man
+integriere wie folgt:
+
+\begin{align}
+    bS_1^2
+    =
+    \int_0^b(x-c)^2dx
+    &=
+    \frac{b^3}{3}-cb^2+c^2b
+    \nonumber\\
+    S_1^2 = \frac{b^2}{3} - cb + c^2
+    \label{eq:amd:3}
+\end{align}
+
+\footnotetext{%
+    \emph{Beachte}: Die  mittlere quadratische  arithmetische Distanz  $S_1^2$
+    ist  nicht  gleich  dem   Quadrat  der  mittleren  arithmetischen  Distanz
+    $S_1$. Die $2$ ist kein Exponent in diesem Fall.
+}
+
+
+F\"ur $c=0$,  also die  m.a.q.D eines Endpunktes  des Streifens  vom Streifen,
+ergibt sich $S_1^2 = \frac{b}{3}$.
+
+Um die m.a.q.D des Streifens von sich selbst zu finden, integrieren wir analog
+zu vorher:
+
+\begin{align}
+    bS_2^2
+    =
+    \int_0^b\left(\frac{b^2}{3}-bx+x^2\right)dx
+    &=
+    \frac{b^3}{6}
+    \nonumber\\
+    S_2^2
+    &=
+    \frac{b^2}{6}
+    \label{eq:amd:4}
+\end{align}
+
+Nun setzen wir in Formel \ref{eq:gmd:1} die erhaltenen Werte f\"ur $S_1^2$ und
+$S_2^2$ ein. Zus\"atzlich ber\"ucksichtigen wir, dass $l$ viel kleiner als $d$
+ist.
+
+\begin{align}
+    L
+    &=
+    2
+    \left[
+        l \log{\left(2l\left[1+\frac{d^2}{4l^2}\right]\right)}
+        - l \log{d} - l - \frac{d^2}{2l} + d
+    \right]
+    \nonumber\\
+    &=
+    2l
+    \left[
+        \log{2l} - \log{d} - 1 - \frac{d^2}{4l^2} + \frac{d}{l}
+    \right]
+    \label{eq:amd:5}\\
+    \text{Substituiere:}
+    \nonumber\\
+    \log{d} &= \log{R_1} = \log{b} - \frac{3}{2}
+    \nonumber\\
+    d^2 &= S_2^2 = \frac{b^2}{6}
+    \nonumber\\
+    d   &= S_1^2 = \frac{b}{3}
+    \nonumber
+\end{align}
+
+Dies ergibt eine genauere Formel f\"ur die Selbstinduktivit\"at eines d\"unnen
+Streifens als Formel \ref{eq:tT:6}.
+
+\begin{equation}
+    \label{eq:amd:7}
+    L = 2l \left[\log{\frac{2l}{b}} + \frac{1}{2} + \frac{b}{3l} - \frac{b^2}{24l^2}\right]
+\end{equation}
+
+
+% ---------------------------------------------------------------------------- %
+\section{Selbstinduktivit\"at eines kreisf\"ormig gewickelten Streifens}
+\label{sec:selfCircleStrip}
+% ---------------------------------------------------------------------------- %
+
+Die Konzepte der mittleren geometrischen und arithmetischen Distanz sollen nun
+dazu benutzt werden, die  Selbstinduktivit\"at eines kreisf\"ormig gewickelten
+Streifens gem\"ass Abbildung \ref{fig:circleStrip} zu bestimmen.
+
+\schematic{circleStrip}
+
+F\"ur einen kurzen zylindrischen Strom in einem flachen Streifen gibt Rayleigh
+folgende Formel, welche genau genug f\"ur die meisten F\"alle ist, solange $b$
+nicht zu gross wird im Verh\"altnis zum Zylinderradius $a$:
+
+\begin{equation}
+    \label{eq:sCS:1}
+    L = 4\pi a 
+    \left[
+        \log{\frac{8a}{b}} - \frac{1}{2} 
+        + \frac{b^2}{32a^2}\left(\log{\frac{8a}{b}} 
+        + \frac{1}{4}\right)
+    \right]
+\end{equation}
+
+Wir werden  diese Formel  als \"Uberpr\"ufung zur  Herleitung der  Methode via
+geometrische und arithmetische mittlere Distanzen benutzen.
+
+Die  gegenseitige  Induktivit\"at  zweier paralleler,  konzentrischer  Kreiese
+(ganz rechts in Abbildung  \ref{fig:circleStrip}) unter Vernachl\"assigung von
+Termen vierter und h\"oherer Ordnung lautet:
+
+
+\begin{equation}
+    \label{eq:sCS:2}
+    M 
+    = 
+    4\pi a
+    \left[
+        \left(1 + \frac{3d^2}{16a^2}\right)
+        \log{\frac{8a}{d}}
+        -
+        \left(2 + \frac{d^2}{16a^3}\right)
+    \right]
+\end{equation}
+
+Dies kann man umformen zu:
+
+\begin{equation}
+    \label{eq:sCS:3}
+    M 
+    = 
+    4\pi a
+    \left[
+        \left(1 + \frac{3d^2}{16a^2}\right)
+        \log{8a}
+        -
+        \log{d}
+        -
+        \frac{3d^2}{16a^2} \log{d}
+        -
+        2 
+        + 
+        \frac{d^2}{16a^3}
+    \right]
+\end{equation}
+
+Um diese Formel auf den Fall eines kurzen Zylinders anwenden zu k\"onnen, muss
+im ersten und  letzten Term das quadratische arithmetische  Mittel, im zweiten
+Term das geometrische Mittel und im dritten Term das Produkt des quadratischen
+arithmetischen Mittels mit dem geometrischen  Mittel bestimmt werden (ein Term
+der Form $S_2^2 \cdot \log{R_2}$).
+
+Zur Bestimmung dieses Produkts integriert man wie folgt:
+
+\begin{gather}
+    bS_1^2 \log{R_1}
+    =
+    \int_0^b (x-c)^2 \log(x-c) dx
+    =
+    \nonumber\\
+    \frac{(b-c)^3}{3}
+    \left[
+        \log(b-c) - \frac{1}{3}
+    \right]
+    +
+    \frac{c^3}{3}
+    \left[
+        \log{c} - \frac{1}{3}
+    \right]
+    \label{eq:sCS:4}
+\end{gather}
+
+\begin{align}
+    b^2 S_2^2\log{R_2}
+    &=
+    \frac{1}{3}
+    \int_0^b
+    (b-x)^3\log(b-x)dx 
+    + 
+    \frac{1}{3}
+    \int_0^b
+    x^3\log{x}dx
+    \nonumber\\
+    &-
+    \frac{1}{9}
+    \int_0^b
+    (b-x)^3dx
+    -
+    \int_0^b
+    x^2dx
+    \nonumber\\
+    &=
+    \frac{b^4}{6}
+    \left(
+        \log{b} - \frac{7}{12}
+    \right)
+    \label{eq:sCS:5}
+\end{align}
+
+\begin{equation}
+    \label{eq:sCS:6}
+    S_2^2 \log{R_2} = \frac{b^2}{6}\left(\log{b}-\frac{7}{12}\right)
+\end{equation}
+
+Nun substituieren wir in Formel \ref{eq:sCS:2} wie folgt:
+
+\begin{align*}
+    \log{d} 
+    &=
+    \log{b} - \frac{3}{2}
+    \\
+    3d^2 
+    &= 
+    \frac{b^2}{2}
+    \\
+    3d^2\log{d}
+    &=
+    \frac{b^2}{2}\left(\log{b}-\frac{7}{12}\right)
+\end{align*}
+
+Dies ergibt:
+
+\begin{align}
+    L
+    &=
+    4\pi a
+    \left[
+        \left(
+            1+\frac{b^2}{32a^2}
+        \right)
+        \log{8a}
+        -
+        \log{b}
+        +
+        \frac{3}{2}
+        -
+        \frac{b^2}{32a^2}
+        \left(
+            \log{b}-\frac{7}{12}
+        \right)
+        -
+        2
+        -
+        \frac{b^2}{96a^3}
+    \right]
+    \nonumber\\
+    &=
+    4\pi a
+    \left[
+        \left(
+            1+\frac{b^2}{32a^2}
+        \right)
+        \log{\frac{8a}{b}}
+        -
+        \frac{1}{2}
+        +
+        \frac{b^2}{128a^2}
+    \right]
+    \label{eq:sCS:7}
+\end{align}
+
+was, ein wenig umgeformt, Rayleigh's Formel \ref{eq:sCS:1} entspricht. Der Weg
+\"uber  zwei  parallele  Kreise  f\"uhrt via  geometrische  und  arithmetische
+Mittelwerte also ebenfalls zum gew\"unschten Ergebnis.
+
+
+% ---------------------------------------------------------------------------- %
+\section{Arithmetische durchschnittliche Distanzen eines Kreises}
+\label{sec:amdC}
+% ---------------------------------------------------------------------------- %
+
+\todo[inline]{In Appendix verlagern}
+\schematic{amdC1}
+
+Die   arithmetische   mittlere   Distanz    eines   Punktes   $P$   (Abbildung
+\ref{fig:amdC1} auf einem Kreis vom  Kreis selbst wird berechnet, indem \"uber
+den Kreis integriert wird. Mit $PB = 2a \cos{\theta}$ ergibt dies:
+
+\begin{gather}
+    \pi a S_1 = \int_0^{\frac{pi}{2}} 2a \cos{\theta} \cdot 2ad\theta = 4a^2
+    \nonumber\\
+    \S_1 = \frac{4a}{\pi}
+    \label{eq:amdC:1}
+\end{gather}
+
+Da die  arithmetische mittlere  Distanz f\"ur alle  Punkte des  Kreises gleich
+ist, gilt auch $S_2 = \frac{4a}{\pi}$.
+
+F\"ur die quadratische arithmetische mittlere Distanz erh\"alt man:
+
+\begin{gather}
+    \pi a S_2^2 = \int_0^{\frac{\pi}{2}} 4a^2 \cos^2{\theta} \cdot 2ad\theta = 2 \pi a^3
+    \nonumber\\
+    S_1^2 = S_2^2 = 2a^2
+    \label{eq:amdC:2}
+\end{gather}
+
+F\"ur  einen  Punkt  $P$  ausserhalb oder  innerhalb  des  Kreises  (Abbildung
+\ref{fig:amdC2}  ergibt such  aufgrund  von  $\overline{PB}^2 =  a^2  + d^2  +
+2ad\cos{\theta}$:
+
+\begin{gather}
+    \pi a S_1^2 = a \int_0^{\pi} (a^2+d^2+2ad\cos{\theta})d\theta = \pi a (d^2+a^2)
+    \nonumber\\
+    S_1^2 = d^2+a^2
+    \label{eq:amdC:3}
+\end{gather}
+
+\schematic{amdC2}
+
+F\"ur die gesamte Kreisfl\"ache bezogen auf Punkt $P$:
+
+\begin{gather}
+    \pi a^2 S_1^2 
+    = 
+    \int_0^a (d^2+r^2) 2\pi rdr 
+    = 
+    2\pi\left[\frac{a^2d^2}{2} + \frac{a^4}{4}\right]
+    \nonumber\\
+    S_1^2 = d^2 + \frac{a^2}{2}
+    \label{eq:amdC:4}
+\end{gather}
+
+Im Falle von $d=0$ ist $S_1^2 = \frac{a^2}{2}$, die quadratische arithmetische
+mittlere Distanz der Fl\"ache des Kreises bezogen auf sein Zentrum.
+
+\schematic{amdC3}
+
+Zur  Bestimmung der  q.a.m.D. einer  Kreisfl\"ache  von sich  selbst kann  man
+$\overline{P_1P_2}^2  =  r_1^2 +  r_2^2  -  2r_1r_2\cos{\theta_2 -  \theta_1}$
+\"uber die Kreisl\"ache zweimal integrieren. Darauf soll aber an dieser Stelle
+verzichtet werden.
+
+
+% ---------------------------------------------------------------------------- %
+\section{Konzentrische Leiter}
+\label{sec:concCond}
+% ---------------------------------------------------------------------------- %
+
+\schematic{concCond}
+
+Die Selbstinduktivit\"at  eines d\"unnen, geraden  Rohres der L\"ange  $l$ und
+Radius $a_2$ ist, wenn $\frac{a_2}{l}$ klein ist,
+
+\begin{equation}
+    \label{eq:concCond:1}
+    L_2 = 2l \left[\log{\frac{2l}{a_2}} - 1\right]
+\end{equation}
+
+Die  gegenseitige  Induktivit\"at eines  solchen  Rohres  auf einen  massiven,
+runden  Leiter  innerhalb  des  Rohres  wie  in  Abbildung  \ref{fig:concCond}
+dargestellt,  ist  gleich  der  Selbstinduktion des  Rohres,  da  das  gesamte
+magnetische Feld des durch das Rohr verursachten Stromes durch den Innenleiter
+fliesst.
+\todo[noline]{%
+    \"Uberlegung  betreffend  der  Feldlinien   noch  nicht  ganz  anschaulich
+    verstanden. Klarheit schaffen.%
+}
+Die Selbstinduktivit\"at eines zylindrischen Innenleiters ist
+
+\begin{equation}
+    \label{eq:concCond:2}
+    L_1 = 2l \left[\log{\frac{2l}{a_1}} - \frac{3}{4}\right]
+\end{equation}
+
+Falls der Strom durch den Innenleiter durch den Aussenleiter zur\"uckfliesst,
+ergibt sich f\"ur die Induktivit\"at der Gesamtkonfiguration
+
+\begin{equation}
+    \label{eq:concCond:3}
+    L = L_1 + L_2 - 2M = L_1 - L_2
+\end{equation}
+
+Da $M = L_2$. Somit:
+
+\begin{equation}
+    \label{eq:concCond:4}
+    L = 2l \left[\log\frac{a_2}{a_1} + \frac{1}{4}\right]
+\end{equation}
+
+\schematic{concCond2}
+
+Falls  der \"aussere  Leiter einen  nicht vernachl\"assigbare  Dicke $a_3-a_2$
+aufweist   (Abbildung  \ref{fig:concCond2}),   muss  $\log{a}$   in  Gleichung
+\ref{eq:concCond:4} durch folgenden Ausdruck ersetzt werden:
+\todo[noline]{%
+    Hier   ist   das   Paper   ein  bisschen   unklar. Nirgends   vorher   ist
+    $a_g$   aufgetaucht. Ebenfalls   ist   $\log{a}$   nicht   als   solches
+    in     Gleichung     \ref{eq:concCond:4}    vorhanden,     sondern     ein
+    Verh\"altnis. Nachrechnen erforderlich.%
+}
+
+\begin{equation}
+    \label{eq:concCond:5}
+    \log{a_g} = \frac{a_3^2 \log{a_3} - a_2^2 \log{a_2}}{a_3^2-a_2^2} - \frac{1}{2}
+\end{equation}
+
+Falls der Strom ein Wechselstrom  von gen\"ugend hoher Frequenz ist, verlagern
+sich die Str\"ome auf die Aussenseite  des Innenleiters und die Innenseite des
+Aussenleiters, und die Induktivit\"at des gesamten Stromkreises wird zu
+
+\begin{equation}
+    \label{eq:concCond:6}
+    L = 2l \log{\frac{a_3}{a_1}}
+\end{equation}
+
+
+% ---------------------------------------------------------------------------- %
+\section{Mehrere Leiter}
+% ---------------------------------------------------------------------------- %
+
+% ---------------------------------------------------------------------------- %
+\section{Selbstinduktivit\"at einer ``nichtinduktiven'' Anordnung Runder Dr\"ahte}
+% ---------------------------------------------------------------------------- %
+
+% ---------------------------------------------------------------------------- %
+\section{Der Fall der nichtinduktiven Windung um einen kreisf\"ormigen Zylinder}
+% ---------------------------------------------------------------------------- %

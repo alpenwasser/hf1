@@ -1,0 +1,20 @@
+\begin{tikzpicture}
+    \coordinate [label=left:$P$]             (P) at (-6,0);
+    \coordinate                              (A) at ( 2,0);
+    \coordinate [label=below:$O$]            (O) at ( 0,0);
+    \coordinate [label=right:$B$]            (B) at (0.667*2,0.745*2);
+    \coordinate                              (M) at (-4,0);
+    \coordinate [label=above right:$\theta$] (N) at ( 1,0);
+
+    % Triangles
+    \draw (P) -- node[midway,below]{$d$} (O) -- (B) -- cycle;
+    \draw (O) -- node[midway,above,sloped]{$a$} (B);
+    \draw[dashed] (O) -- (A);
+
+    % Circle
+    \node [draw] at (O) [circle through={(B)}] {};
+
+    % Arc for Angle
+    \draw (M) arc (0:12:2);
+    \draw (N) arc (0:48:1);
+\end{tikzpicture}

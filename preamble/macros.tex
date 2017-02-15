@@ -1,9 +1,40 @@
-\def\code#1{\texttt{#1}}
-\def\quelleVA{\emph{Quelle:} Versuchsanleitung}
-\def\anweisung{\emph{Anmerkung f\"ur Autoren: }}
-\def\Raspi{Raspberry Pi}
+\def\code#1{{\fontfamily{lmtt}\selectfont#1}}
+\def\signal#1{{\fontfamily{lmtt}\selectfont#1}}
+%\def\signal#1{\texttt{#1}}
+
+% Names and such
+\def\dcsupp{MX100TP}
+\def\funcgen{HP 33120A Waveform Generator}
+\def\raspi{Raspberry Pi}
+\def\sdm{$\Delta\Sigma$ modulator}
 \def\ISC{I\textsuperscript{2}C}
 
+\newcommand\dangersign[1][2ex]{%
+  \renewcommand\stacktype{L}%
+  \scaleto{\stackon[1.3pt]{\color{red}$\triangle$}{\tiny !}}{#1}%
+}
+
+\newcommand\cautionsign[1][1em]{%
+    \resizebox{!}{#1}{%
+        \begin{tikzpicture}
+            \begin{scope}[x={(0mm,20mm)},y={(0mm,20mm)}]
+                \draw[red,line width=2mm,rounded corners] (0,0) -- (10mm, 20mm) -- (20mm,0mm) -- cycle;
+                \fill[black,line width=1pt,rounded corners] (9mm,15mm) -- (11mm,15mm) -- (10mm,4mm) -- cycle;
+                \fill[black] (10mm,3mm) circle[radius=1mm];
+            \end{scope}
+        \end{tikzpicture}}}
+
+\newcommand\cautionnote[1]{%
+    \vspace{1em}
+    \noindent
+    \adjustbox{valign=t}{%
+        \begin{minipage}{20mm}
+        \cautionsign[15mm]
+        \end{minipage}
+        \begin{minipage}{120mm}
+            \small
+            #1
+        \end{minipage}}\vspace*{1em}}
 
 \definecolor{darkred}{rgb}{0.7,0,0}
 \definecolor{darkblue}{rgb}{0.6,0.6,1}
@@ -29,3 +60,16 @@
 \newcommand{\colorbitbox}[4]{%
     \rlap{\bitbox{#3}{\color{#1}\rule{\width}{\height}}}%
     \bitbox{#3}{\sffamily\textcolor{#2}{#4}}}
+
+
+% Depends on \figcaption from the memoir.tex configuration file
+\newcommand{\schematic}[1]{%
+    \vspace{1em}
+    \begin{minipage}{\textwidth}
+        \centering
+        \input{images/#1.tex}
+        \figcaption{}
+        \label{fig:#1}
+    \end{minipage}
+    \vspace{1em}
+}

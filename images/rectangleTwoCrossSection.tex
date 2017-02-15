@@ -1,0 +1,25 @@
+\begin{tikzpicture}
+    \draw (0,0) -- (2,0) -- (2,2) -- (0,2) -- cycle;
+    \draw (4,0) -- (6,0) -- (6,2) -- (4,2) -- cycle;
+
+    \draw[dashed,arrows={Stealth-Stealth}] (0,2.3) -- (2,2.3);
+    \draw[dashed,arrows={Stealth-Stealth}] (4,2.3) -- (6,2.3);
+    \draw[dashed,arrows={Stealth-Stealth}] (2,1) -- (4,1);
+    \draw[dashed,arrows={Stealth-Stealth}] (1,-0.3) -- (5,-0.3);
+
+    \node at (1,2.5) {$a$};
+    \node at (5,2.5) {$a$};
+    \node at (3,1.2) {$a$};
+    \node at (3,-0.1) {$2a$};
+\end{tikzpicture}
+
+\vspace*{2em}
+
+\begin{tikzpicture}
+    \draw (0,0) -- (1.414,-1.414) -- (2.828,0) -- (1.414,1.414) -- cycle;
+    \draw[dashed,arrows={Stealth-Stealth}] (2.822,0) -- (5.657,0);
+    \draw (5.657,0) -- (7.071,-1.414) -- (8.485,0) -- (7.071,1.414) -- cycle;
+
+    \node at (2.121,0.907) {$a$};
+    \node at (4.243,0.3) {$a\sqrt{2}$};
+\end{tikzpicture}

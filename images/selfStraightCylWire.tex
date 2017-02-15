@@ -1,0 +1,44 @@
+\begin{tikzpicture}
+    % Length of wire
+    \draw[dashed,arrows={Stealth-Stealth}] (0.25,0) -- (0.25,8);
+    \node at (0,4) {$l$};
+
+    % y Coordinate
+    \draw[dashed,arrows={Stealth-Stealth}] (0.75,0) -- (0.75,5.5);
+    \node at (0.5,2.75) {$y$};
+
+    % Wire
+    %\fill[blue,draw=red] (1.25,0) -- (1.25,8) -- (1.75,8) -- (1.75,0) -- cycle;
+    \draw (1.25,0) -- (1.25,8) -- (1.75,8) -- (1.75,0) -- cycle;
+    \draw[dash dot] (1.5,-0.25) -- (1.5,8.25);
+    \node at (1.5,-0.5) {$A$};
+    \node at (1.5,8.5) {$B$};
+
+    % Triangle
+    \draw (1.5,3.5) -- (6.5,3.5) -- (1.5,5.5);
+    \node at (4,3.25) {$a$};
+    \node at (4,4.75) {$c$};
+    \node at (6.825,3.5) {$P$};
+    % arctan(5/2) =~ 68.2 degrees
+    \draw[dashed,arrows={Stealth-Stealth}] (1.5,4.5) arc (-90:-22:1);
+    \node at (2.25,4.5) {$\theta$};
+
+    % Distance Triangle-Base of Wire
+    \draw[dashed,arrows={Stealth-Stealth}] (2.25,0) -- (2.25,3.5);
+    \node at (2.5,1.75) {$b$};
+
+    % dy
+    \draw[dashed] (1.25,5.625) -- (1.75,5.625) -- (1.75,5.375) -- (1.25,5.375) -- cycle;
+    \node at (2.125,5.625) {$dy$};
+
+    % Parallel border lines
+    \draw (1.75,0) -- (11,0);
+    \draw (1.75,8) -- (11,8);
+
+    % dx
+    \draw (6.375,0) -- (6.375,8) -- (6.625,8) -- (6.625,0) -- cycle;
+    \node at (6.5,8.5) {$dx$~$D$};
+    \node at (6.5,-0.5) {$C'$};
+    % Strip in space parallel to wire
+    %\draw (1.25,0) -- (1.25,8) -- (1.75,8) -- (1.75,0) -- cycle;
+\end{tikzpicture}

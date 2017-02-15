@@ -1,0 +1,13 @@
+\begin{tikzpicture}
+    \draw (0,0) node[left]{$A$} -- (8,0) node[right]{$B$};
+    \draw[arrows={-Circle}] (0,0) -- (2,0) node[below]{$P$};
+    \draw[dashed,arrows={Stealth-Stealth}] (0,0.4) -- (1,0.4) node[below]{$c$} -- (2,0.4);
+
+    \draw[dashed,arrows={Stealth-Stealth}] (0,0.6) -- (4,0.6) node[above] {$x$} -- (5,0.6);
+
+    \draw[dashed,arrows={Stealth-Stealth}] (0,-0.9) -- (4,-0.9) node[above] {$b$} -- (8,-0.9);
+
+    \draw (4.9,-0.3) -- (4.9,0.6);
+    \draw (5.1,-0.3) -- (5.1,0.6);
+    \node at (5,-0.5) {$dx$};
+\end{tikzpicture}
