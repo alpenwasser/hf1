@@ -56,14 +56,14 @@ $dx$:
     \label{eq:sSCW:4}
     \frac{d\Phi}{i} 
     = 
-    \frac{dx \cdot \mu}{a} \cdot 
+    \frac{dx}{a} \cdot 
     \int_0^l 
     \left[ 
         \frac{l-b}{\sqrt{a^2 - (l-b)^2}} + \frac{b}{\sqrt{a^2+b^2}}
     \right]
     db
     =
-    \frac{2\mu dx}{a}
+    \frac{2dx}{a}
     \left[
         \sqrt{a^2 + l^2} - a
     \right]
@@ -76,28 +76,28 @@ unendlich) ergibt dies:
 \begin{align}
     \frac{\Phi}{i} 
     = 
-    2 \mu \cdot
+    2
     \int_{\rho}^{\infty}
     \left[ 
         \frac{\sqrt{x^2+l^2}}{x} - 1
     \right]
     dx
     & =
-    2 \mu \cdot
+    2
     \left[ 
         \sqrt{x^2 + l^2} - x - l \log{\frac{l + \sqrt{x^2+l^2}}{x}}
     \right]_{\rho}^{\infty}
     \label{eq:sSCW:4}
     \\
     & =
-    2 \mu \cdot
+    2
     \left[ 
         l \cdot \log{\frac{l+\sqrt{l^2+\rho^2}}{\rho}} - \sqrt{l^2+\rho^2} + \rho
     \right]
     \label{eq:sSCW:5}
     \\
     & \approx
-    2 \mu l \left[ 
+    2 l \left[ 
         \log{\frac{2l}{\rho}} - 1
     \right]
     \label{eq:sSCW:6}
@@ -107,12 +107,13 @@ Gem\"ass    Gleichung   \code{TODO}    ist    dies   der    Anteil   an    der
 Selbstinduktivit\"at,  welcher vom  magnetischen Feld  ausserhalb des  Leiters
 verursacht wird. Zus\"atzlich muss jedoch auch  das Feld im Innern des Leiters
 ber\"ucksichtigt werden.
+\todo[noline]{Herleitung im Artikel noch nicht ganz klar}
 
 \schematic{selfStraightCylWireCrossSection}
 
 Die   Feldst\"arke  am   Punkt   $Q   (x,0)$  im   Innern   des  Drahtes   ist
-$\frac{2ix\mu}{\rho^2}$. Der auf den  Strom normierte Fluss in  einem Element des
-Drahtes mit L\"ange $l$ und der Breite $dx$ ist somit
+$\frac{2ix\mu}{\rho^2}$. Der auf  den Strom  normierte Fluss in  einem Element
+des Drahtes mit L\"ange $l$ und der Breite $dx$ ist somit
 
 \begin{equation}
     \label{eq:sSCW:7}
@@ -126,11 +127,11 @@ innerhalb des Drahtes:
 
 \begin{equation}
     \label{eq:sSCW:8}
-    \frac{\Phi}{i} = \frac{\mu \cdot li}{\rho^1}
+    \frac{\Phi}{i} = \frac{li}{\rho^1}
     \cdot
     \int_{-1}^{\rho} 2xdx
     =
-    li\mu
+    li
 \end{equation}
 
 Da die  Feldlinien innerhalb  des Leiters nicht  den Gesamten  Querschnitt des
@@ -141,15 +142,23 @@ des Leiters, die geschnitten wird:
     \label{eq:sSCW:8}
     i \cdot L_2 
     = 
-    \mu l \cdot \int_{0}^{\rho} \frac{2ix}{\rho^2} \cdot \frac{x^2}{\rho^2}dx
+    l \cdot \int_{0}^{\rho} \frac{2ix}{\rho^2} \cdot \frac{x^2}{\rho^2}dx
     = 
-    \frac{\mu \cdot li}{2}
+    \frac{li}{2}
 \end{equation}
 
 Somit:
 
 \begin{equation}
     \label{eq:sSCW:9}
+    L_2 = \frac{l}{2}
+\end{equation}
+
+Wenn  die   Permeabilit\"at  des   Drahtes  $\mu$  ist,   ist  der   Teil  der
+Selbstinduktivit\"at, welcher vom internet Feld verursacht wird
+
+\begin{equation}
+    \label{eq:sSCW:91}
     L_2 = \frac{\mu l}{2}
 \end{equation}
 
@@ -159,7 +168,7 @@ Zusammenf\"ugen der Gleichungen \ref{eq:sSCW:9} und \ref{eq:sSCW:5} respektive
 \begin{align}
     L 
     & = 
-    2 \mu \cdot 
+    2 l
     \left[
         l \cdot \log{\frac{l+\sqrt{l^2+\rho^2}}{\rho}}
         - 
@@ -172,11 +181,20 @@ Zusammenf\"ugen der Gleichungen \ref{eq:sSCW:9} und \ref{eq:sSCW:5} respektive
     \label{eq:sSCW:10}
     \\
     & \approx
-    2 \mu \cdot 
+    2 l
     \left[
         \log{\frac{2l}{\rho}} - \frac{3}{4}
     \right]
+    \quad \text{mit $L_2 = \frac{l}{2}$}
     \label{eq:sSCW:11}
+    \\
+    & \approx
+    2l
+    \left[
+        \log{\frac{2l}{\rho}} - 1 + \frac{\mu}{4}
+    \right]
+    \quad \text{mit $L_2 = \frac{\mu l}{2}$}
+    \label{eq:sSCW:111}
 \end{align}
 
 Wenn  das  Magnetfeld  innerhalb  des  Leiters  vernachl\"assigt  werden  kann
@@ -187,7 +205,7 @@ vernachl\"assigbarer Drahtdurchmesser), vereinfacht sich \ref{eq:sSCW:11} zu:
     \label{eq:sSCW:12}
     L_2 
     \approx 
-    2 \mu \cdot 
+    2
     \left[
         \log{\frac{2l}{\rho}} - 1
     \right]
@@ -210,14 +228,14 @@ folgenden Ausdruck ergibt:
 \begin{align}
     M
     & =
-    2 \mu
+    2
     \left[
         l \cdot \log{\frac{l+\sqrt{l^2+d^2}}{d}} - \sqrt{l^2 + d^2} + d
     \right]
     \label{eq:mSW:1}
     \\
     & \approx
-    2 \mu l
+    2
     \left[
         \log{\frac{2l}{d}} - 1 + \frac{d}{l}
     \right]
@@ -253,9 +271,9 @@ erh\"alt man hierf\"ur:
     \label{eq:sRC:2}
     L 
     = 
-    4 \mu_0 l 
+    4 l 
     \left[ 
-        \log{\frac{d}{\rho}} + \frac{\mu_r}{4}
+        \log{\frac{d}{\rho}} + \frac{\mu}{4}
     \right]
 \end{equation}
 
@@ -287,7 +305,7 @@ Das Magnetfeld im Punkt $P (x,y)$, verursacht durch Strom $i$ in $AB$, lautet:
     \label{eq:mISL:1}
     H_{P}
     =
-    \frac{i\mu_0}{x}
+    \frac{i}{x}
     \left[
         \frac{y}{\sqrt{x^2+y+2}} - \frac{y - l}{\sqrt{x^2+(y-l)^2}}
     \right]
@@ -298,7 +316,6 @@ Der Gesamte auf $i$ normierte magnetische Fluss in $S_2$ ist somit:
 \begin{align}
     \frac{\Phi}{i}
     & =
-    \mu_0 
     \int_{0}^{\infty} \frac{dx}{x} \int_{0}^{l+m}
     \left[
         \frac{y dy}{\sqrt{x^2+y^2}} - \frac{(y-l) dy}{\sqrt{x^2+(y-l)^2}}
@@ -306,7 +323,6 @@ Der Gesamte auf $i$ normierte magnetische Fluss in $S_2$ ist somit:
     \nonumber
     \\
     &=
-    \mu_0
     \int_{0}^{\infty}
     \left[
         \sqrt{x^2 + (l+m)^2)} - \sqrt{x^2+l^2} - \sqrt{x^2+m^2}+x
@@ -314,7 +330,7 @@ Der Gesamte auf $i$ normierte magnetische Fluss in $S_2$ ist somit:
     \frac{dx}{x}
     \nonumber
     \\
-    & = \mu_0
+    &= 
     \Bigg[
         \sqrt{x^2 + (l+m)^2} - \sqrt{x^2+l^2} - \sqrt{x^2+m^2}
         \nonumber
@@ -327,7 +343,7 @@ Der Gesamte auf $i$ normierte magnetische Fluss in $S_2$ ist somit:
     \label{eq:mISL:2}
     \\
     & \approx
-    \mu_0 \cdot \left[ l \cdot \log{\frac{l+m}{l}} + m \cdot \log{\frac{l+m}{m}} \right]
+    \left[ l \cdot \log{\frac{l+m}{l}} + m \cdot \log{\frac{l+m}{m}} \right]
     \label{eq:mISL:3}
 \end{align}
 
@@ -354,7 +370,7 @@ Die approximierte  Formel f\"ur die Selbstinduktivit\"at  einer Rechteckstange
 ist somit:
 
 \begin{equation}
-    L = 2 \mu_0 l \left[ \log{\frac{2l}{R}} - 1 + \frac{R}{l} \right]
+    L = 2 l \left[ \log{\frac{2l}{R}} - 1 + \frac{R}{l} \right]
     \label{eq:sRB:1}
 \end{equation}
 
@@ -418,7 +434,7 @@ in Gleichung \ref{eq:sRB:3} zu ersetzen. Eingesetzt ergibt dies:
     \label{eq:sRB:4}
     L 
     = 
-    2 \mu_0 l \left[ \log{\frac{2l}{\alpha + \beta}} 
+    2 l \left[ \log{\frac{2l}{\alpha + \beta}} 
     + \frac{1}{2} 
     + \frac{0.2235(\alpha + \beta)}{l} \right]
 \end{equation}
@@ -440,7 +456,7 @@ $d$ durch die m.g.D. $R$ der beiden Rechteckstangen.
 \begin{equation}
     M
     =
-    2 \mu l
+    2 l
     \left[
         \log{\frac{2l}{R}} - 1 + \frac{R}{l}
     \right]
@@ -494,7 +510,7 @@ $l$, respektive $d$ durch $a$ ersetzt werden. Es folgt:
 \begin{align}
     L 
     & = 
-    2a \mu 
+    2a
     \left[ 
         \log{\frac{a + \sqrt{a^2+\rho^2}}{\rho}} - \sqrt{1-\frac{\rho^2}{a^2}} + \frac{1}{4} + \frac{\rho}{a}
     \right]
@@ -502,7 +518,7 @@ $l$, respektive $d$ durch $a$ ersetzt werden. Es folgt:
     \\
     M 
     & = 
-    2a \mu 
+    2a
     \left[ 
         \log{\frac{a + \sqrt{2a^2}}{a}} - \sqrt{2} + 1
     \right]
@@ -515,7 +531,7 @@ Drahtdurchmesser  $\rho$, kann  $\frac{\rho^2}{a^2}$ vernachl\"assigt  werden.
 \begin{align}
     L_1 - M
     & =
-    2a\mu_0 
+    2a
     \left[
         \log{\frac{2a}{\rho(1+\sqrt{2})}} - 1.75 + \sqrt{2} + \frac{\rho}{a}
     \right]
@@ -525,7 +541,7 @@ Drahtdurchmesser  $\rho$, kann  $\frac{\rho^2}{a^2}$ vernachl\"assigt  werden.
     &= 
     4(L_1 - M) 
     =
-    8a\mu_0
+    8a
     \left[
         \log{\frac{a}{\rho}}  - \log{\frac{1+\sqrt{2}}{2}} + \frac{\rho}{a} - 0.3358
     \right]
@@ -533,7 +549,7 @@ Drahtdurchmesser  $\rho$, kann  $\frac{\rho^2}{a^2}$ vernachl\"assigt  werden.
     \\
     L
     & =
-    8a \mu_0
+    8a
     \left[ 
         \log{\frac{a}{\rho}} + \frac{\rho}{a} - 0.524
     \right]
@@ -578,23 +594,23 @@ Vernachl\"assigung der quadratischen Terme. Eingesetzt in \ref{eq:sRro:1}:
 \begin{align}
     L 
     & = 
-    4 \mu_0
+    4
     \left[
         a \log{\frac{2a}{\rho}} - \frac{3}{4}a + \rho
     \right]
-    + 4 \mu_0
+    + 4
     \left[
         b \log{\frac{2b}{\rho}} - \frac{3}{4}b + \rho
     \right]
     \nonumber\\
     & -
-    4 \mu_0
+    4
     \left[
         a\log{\frac{a+\sqrt{a^2+b^2}}{b}} - \sqrt{a^2+b^2} + b
     \right]
     \nonumber\\
     & -
-    4 \mu_0
+    4
     \left[
         b\log{\frac{b+\sqrt{a^2+b^2}}{a}} - \sqrt{a^2+b^2} + a
     \right]
@@ -825,16 +841,10 @@ Im Falle eines Quadrats mit $b=a$ vereinfacht sich dies zu:
 
 
 % ---------------------------------------------------------------------------- %
-\section{Eigeninduktivit\"at und Gegenseitige Induktivit\"at d\"unner Streifen}
+\clearpage
+\section{Eigeninduktivit\"at und gegenseitige Induktivit\"at d\"unner Streifen}
 \label{sec:thinTapes}
 % ---------------------------------------------------------------------------- %
-
-\todo[inline]{%
-    Dieser Abschnitt  sollte meines Erachtens besser  strukturiert werden. Die
-    mathematischen  Exkurse   zum  arithmetischen  und   geometrischen  Mittel
-    st\"oren  den Leserfluss. Andererseits  sind sie  f\"ur das  Verst\"andnis
-    erforderlich.%
-}
 
 \begin{minipage}{0.5\textwidth}
     \schematic{tapeSingle}
@@ -930,171 +940,16 @@ Womit sich f\"ur die gesamte Induktivit\"at ergibt:
 %\section{Anwendung: Shunts mit niedriger Induktivit\"at}
 % ---------------------------------------------------------------------------- %
 
-% ---------------------------------------------------------------------------- %
-\subsection{Die mittlere geometrische Distanz eines Streifens}
-\label{subsec:gmd}
-% ---------------------------------------------------------------------------- %
+Unter  Benutzung  der  mittleren   geometrischen  Distanz  und  der  mittleren
+arithmetischen Distanz kann noch eine genauere Formel f\"ur die Induktivit\"at
+eines Streifens hergeleitet werden.  Die mathematischen Herleitungen f\"ur die
+mittlere  geometrische und  die  mittlere arithmetische  Distanz  sind in  den
+Anh\"angen  \ref{sec:gmd}  und  \ref{sec:amd} ab  Seite  \pageref{sec:gmd}  zu
+finden.
 
-Im  Folgenden  soll  eine  genauere  Formel  f\"ur  die  Induktivit\"at  eines
-Streifens  hergeleitet werden,  unter  Benutzung  der mittleren  geometrischen
-Distanz und der mittleren arithmetischen Distanz.
-
-Zur Bestimmung der Selbstinduktivit\"at eines d\"unnen, geraden Streifens kann
-man  sich  der  Tatsache  behelfen,  dass  die  gesamte  Induktivit\"at  einer
-Leiterkonfiguration gleich  der Summe  aller einzelnen  Induktivit\"aten ihrer
-Komponenten ist  (die Summe  der Induktivit\"aten  aller Komponenten  auf sich
-selbst und auf alle anderen Komponenten).
-
-\schematic{gmd}
-
-Zerlegt man den  Streifen in $n$ Teilstreifen, wie  in Abbildung \ref{fig:gmd}
-dargestellt,  tr\"agt jedes  Element  $\frac{1}{n}$ des  gesamten Stromes  und
-es  ergeben  sich $n^2$  Induktivit\"aten  insgesamt. Diese  m\"ussen nun  auf
-vern\"unftige Art miteinander verrechnet werden.
-
-Die exakte Formel \ref{eq:mSW:1} f\"ur die gegenseitige  Induktivit\"at zweier
-Leiter kann umgeschrieben werden als
-
-\begin{equation}
-    M
-    =
-    2 \mu
-    \left[
-        l \cdot \log{l+\sqrt{l^2+d^2}} - l\log{d} - \sqrt{l^2 + d^2} + d
-    \right]
-    \label{eq:gmd:1}
-\end{equation}
-
-\todo[noline]{Noch unklar, weshalb dies die Mittelwerte sind}
-
-Es  stellt sich  heraus, dass  diese  Gleichung zur  Bestimmung des  gesuchten
-Ausdrucks gemittelt  werden muss. Der  Mittelwert von $\log{d}$  resultiert in
-der bereits angetroffenen mittleren  \emph{geometrischen} Distanz, wogegen die
-Mittelung von  $d$ und  $d^2$ \"uber  die \emph{arithmetische}  respektive die
-\emph{quadratische arithmetische} Mittelung bestimmt wird.
-
-Der Durchschnitt von $\log{d}$ f\"ur $n$ Teilstreifen berechnet sich gem\"ass:
-
-\begin{align}
-    \frac{1}{n}
-    \bigg[
-        \log{d_1} + \log{d_2} + \log{d+3} + \cdots + \log{d_n}
-    \bigg]
-    &=
-    \frac{1}{n}
-    \log{\bigg(
-        d_1 \cdot d_2 \cdot d_3 \cdot \cdots \cdot d_n 
-    \bigg)}
-    \nonumber\\
-    &=
-    \log{\sqrt[\leftroot{2}n]{d_1 d_2 d_3 \cdots d_n}}
-    \nonumber\\
-    &=
-    \log{R}
-    \label{eq:gmd:2}
-\end{align}
-
-
-% ---------------------------------------------------------------------------- %
-\subsection{Die mittlere arithmetische Distanz eines Streifens}
-\label{subsec:amd}
-% ---------------------------------------------------------------------------- %
-
-\schematic{amd}
-
-Zuerst  bestimmen wir  die arithmetische  mittlere Distanz  $S_1$ des  Punktes
-$P$  von  allen   anderen  Punkten  der  Linie   $AB$. Zuerst  betrachten  wir
-das  Liniensegment  links  von  $P$. Die mittlere  arithmetische  Distanz  von
-$P$  zu   allen  Punkten  dieses  Segments   ist  $\frac{c}{2}$. Die  mittlere
-arithmetische Distanz  von $P$ zu  allen Punkten  im rechten Segment  $PB$ ist
-$\frac{b-c}{2}$. F\"ur die gesamte Linie $AB$ ergibt sich somit:
-
-\todo[noline]{%
-    Woher  diese  Gleichung  pl\"otzlich  kommt,   ist  mir  noch  nicht  ganz
-    klar: Begr\"undung suchen.%
-}
-
-\begin{align}
-    b \cdot S_1
-    &=
-    \frac{b-c}{2}(b-c) + \frac{c}{2}c = \frac{(b-c)^2}{2}+\frac{c^2}{2}
-    \nonumber\\
-    S_1
-    &=
-    \frac{b}{2} - c + \frac{c^2}{2}
-    \label{eq:amd:1}
-\end{align}
-
-Zur Bestimmung der mittleren arithmetischen Distanz aller Punkte des Streifens
-vom Streifen bzw. der mittleren  arithmetischen Distanz des Streifens von sich
-selbst  muss $S_1$  \"uber  den Streifen  integriert werden. Substituiert  man
-$c=x$:
-
-\begin{align}
-    bS_2 
-    =
-    \int_0^b
-    \left(
-        \frac{b}{2} - x + \frac{x^2}{b}
-    \right)dx
-    =
-    \left[\frac{bx}{2}-\frac{x^2}{2} + \frac{x^3}{3b}\right]_0^b
-    &=
-    \frac{b^2}{3}
-    \nonumber\\
-    S_2
-    &=
-    \frac{b}{3}
-    \label{eq:amd:2}
-\end{align}
-
-%Als   n\"achstes   wollen   wir  die   mittlere   quadratische   arithmetische
-%Distanz\footnotemark  $S_1^2$  des  Punktes $P$  vom  Streifen  bestimmen. Man
-%integriere wie folgt:
-Als   n\"achstes   wollen   wir  die   mittlere   quadratische   arithmetische
-Distanz$S_1^2$  des Punktes  $P$  vom Streifen  bestimmen. Man integriere  wie
-folgt:
-
-\begin{align}
-    bS_1^2
-    =
-    \int_0^b(x-c)^2dx
-    &=
-    \frac{b^3}{3}-cb^2+c^2b
-    \nonumber\\
-    S_1^2 = \frac{b^2}{3} - cb + c^2
-    \label{eq:amd:3}
-\end{align}
-
-%\footnotetext{%
-%    \emph{Beachte}: Die  mittlere quadratische  arithmetische Distanz  $S_1^2$
-%    ist  nicht  gleich  dem   Quadrat  der  mittleren  arithmetischen  Distanz
-%    $S_1$. Die $2$ ist kein Exponent in diesem Fall.
-%}
-
-
-F\"ur $c=0$,  also die  m.a.q.D eines Endpunktes  des Streifens  vom Streifen,
-ergibt sich $S_1^2 = \frac{b}{3}$.
-
-Um die m.a.q.D des Streifens von sich selbst zu finden, integrieren wir analog
-zu vorher:
-
-\begin{align}
-    bS_2^2
-    =
-    \int_0^b\left(\frac{b^2}{3}-bx+x^2\right)dx
-    &=
-    \frac{b^3}{6}
-    \nonumber\\
-    S_2^2
-    &=
-    \frac{b^2}{6}
-    \label{eq:amd:4}
-\end{align}
-
-Nun setzen wir in Formel \ref{eq:gmd:1} die erhaltenen Werte f\"ur $S_1^2$ und
-$S_2^2$ ein. Zus\"atzlich ber\"ucksichtigen wir, dass $l$ viel kleiner als $d$
-ist.
+Setzt  man die  dort  erhaltenen Werte  f\"ur $S_1^2$  und  $S_2^2$ in  Formel
+\ref{eq:gmd:1} ein,  und ber\"ucksichtigt man,  dass $l$ viel kleiner  als $d$
+ist, ergibt sich:
 
 \begin{align}
     L
@@ -1315,75 +1170,6 @@ Dies ergibt:
 was, ein wenig umgeformt, Rayleigh's Formel \ref{eq:sCS:1} entspricht. Der Weg
 \"uber  zwei  parallele  Kreise  f\"uhrt via  geometrische  und  arithmetische
 Mittelwerte also ebenfalls zum gew\"unschten Ergebnis.
-
-
-% ---------------------------------------------------------------------------- %
-\section{Arithmetische durchschnittliche Distanzen eines Kreises}
-\label{sec:amdC}
-% ---------------------------------------------------------------------------- %
-
-\todo[inline]{In Appendix verlagern}
-\schematic{amdC1}
-
-Die   arithmetische   mittlere   Distanz    eines   Punktes   $P$   (Abbildung
-\ref{fig:amdC1} auf einem Kreis vom  Kreis selbst wird berechnet, indem \"uber
-den Kreis integriert wird. Mit $PB = 2a \cos{\theta}$ ergibt dies:
-
-\begin{gather}
-    \pi a S_1 = \int_0^{\frac{pi}{2}} 2a \cos{\theta} \cdot 2ad\theta = 4a^2
-    \nonumber\\
-    \S_1 = \frac{4a}{\pi}
-    \label{eq:amdC:1}
-\end{gather}
-
-Da die  arithmetische mittlere  Distanz f\"ur alle  Punkte des  Kreises gleich
-ist, gilt auch $S_2 = \frac{4a}{\pi}$.
-
-F\"ur die quadratische arithmetische mittlere Distanz erh\"alt man:
-
-\begin{gather}
-    \pi a S_2^2 = \int_0^{\frac{\pi}{2}} 4a^2 \cos^2{\theta} \cdot 2ad\theta = 2 \pi a^3
-    \nonumber\\
-    S_1^2 = S_2^2 = 2a^2
-    \label{eq:amdC:2}
-\end{gather}
-
-F\"ur  einen  Punkt  $P$  ausserhalb oder  innerhalb  des  Kreises  (Abbildung
-\ref{fig:amdC2}  ergibt such  aufgrund  von  $\overline{PB}^2 =  a^2  + d^2  +
-2ad\cos{\theta}$:
-
-\begin{gather}
-    \pi a S_1^2 = a \int_0^{\pi} (a^2+d^2+2ad\cos{\theta})d\theta = \pi a (d^2+a^2)
-    \nonumber\\
-    S_1^2 = d^2+a^2
-    \label{eq:amdC:3}
-\end{gather}
-
-\schematic{amdC2}
-
-F\"ur die gesamte Kreisfl\"ache bezogen auf Punkt $P$:
-
-\begin{gather}
-    \pi a^2 S_1^2 
-    = 
-    \int_0^a (d^2+r^2) 2\pi rdr 
-    = 
-    2\pi\left[\frac{a^2d^2}{2} + \frac{a^4}{4}\right]
-    \nonumber\\
-    S_1^2 = d^2 + \frac{a^2}{2}
-    \label{eq:amdC:4}
-\end{gather}
-
-Im Falle von $d=0$ ist $S_1^2 = \frac{a^2}{2}$, die quadratische arithmetische
-mittlere Distanz der Fl\"ache des Kreises bezogen auf sein Zentrum.
-
-\schematic{amdC3}
-
-Zur  Bestimmung der  q.a.m.D. einer  Kreisfl\"ache  von sich  selbst kann  man
-$\overline{P_1P_2}^2  =  r_1^2 +  r_2^2  -  2r_1r_2\cos{\theta_2 -  \theta_1}$
-\"uber die Kreisl\"ache zweimal integrieren. Darauf soll aber an dieser Stelle
-verzichtet werden.
-
 
 % ---------------------------------------------------------------------------- %
 \section{Konzentrische Leiter}
@@ -1874,7 +1660,7 @@ Induktivit\"at eines beliebigen Drahtes berechnen zu k\"onnen.
 
 
 % ---------------------------------------------------------------------------- %
-\section{Der Fall der nichtinduktiven Windung um einen kreisf\"ormigen Zylinder}
+\section{Nichtinduktive Windung um einen kreisf\"ormigen Zylinder}
 \label{sec:nonIndWindings}
 % ---------------------------------------------------------------------------- %
 

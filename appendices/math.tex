@@ -1,4 +1,235 @@
+% **************************************************************************** %
+\chapter{Mathematische Exkurse}
+\label{chap:math}
+% **************************************************************************** %
+
+\todo[inline]{``Appendices'' im Inhaltsverzeichnis irgendwie herausbringen.}
+
 % ---------------------------------------------------------------------------- %
-\subsection{Die mittlere geometrische Distanz eines Streifens}
-\label{subsec:gmd:strip}
+\section{Die mittlere geometrische Distanz eines Streifens}
+\label{sec:gmd}
 % ---------------------------------------------------------------------------- %
+
+Zur Bestimmung der Selbstinduktivit\"at eines d\"unnen, geraden Streifens kann
+man  sich  der  Tatsache  behelfen,  dass  die  gesamte  Induktivit\"at  einer
+Leiterkonfiguration gleich  der Summe  aller einzelnen  Induktivit\"aten ihrer
+Komponenten ist  (die Summe  der Induktivit\"aten  aller Komponenten  auf sich
+selbst und auf alle anderen Komponenten).
+
+\schematic{gmd}
+
+Zerlegt man den  Streifen in $n$ Teilstreifen, wie  in Abbildung \ref{fig:gmd}
+dargestellt,  tr\"agt jedes  Element  $\frac{1}{n}$ des  gesamten Stromes  und
+es  ergeben  sich $n^2$  Induktivit\"aten  insgesamt. Diese  m\"ussen nun  auf
+vern\"unftige Art miteinander verrechnet werden.
+
+Die exakte Formel \ref{eq:mSW:1} f\"ur die gegenseitige  Induktivit\"at zweier
+Leiter kann umgeschrieben werden als
+
+\begin{equation}
+    M
+    =
+    2 \mu
+    \left[
+        l \cdot \log{l+\sqrt{l^2+d^2}} - l\log{d} - \sqrt{l^2 + d^2} + d
+    \right]
+    \label{eq:gmd:1}
+\end{equation}
+
+\todo[noline]{Noch unklar, weshalb dies die Mittelwerte sind}
+
+Es  stellt sich  heraus, dass  diese  Gleichung zur  Bestimmung des  gesuchten
+Ausdrucks gemittelt  werden muss. Der  Mittelwert von $\log{d}$  resultiert in
+der bereits angetroffenen mittleren  \emph{geometrischen} Distanz, wogegen die
+Mittelung von  $d$ und  $d^2$ \"uber  die \emph{arithmetische}  respektive die
+\emph{quadratische arithmetische} Mittelung bestimmt wird.
+
+Der Durchschnitt von $\log{d}$ f\"ur $n$ Teilstreifen berechnet sich gem\"ass:
+
+\begin{align}
+    \frac{1}{n}
+    \bigg[
+        \log{d_1} + \log{d_2} + \log{d+3} + \cdots + \log{d_n}
+    \bigg]
+    &=
+    \frac{1}{n}
+    \log{\bigg(
+        d_1 \cdot d_2 \cdot d_3 \cdot \cdots \cdot d_n 
+    \bigg)}
+    \nonumber\\
+    &=
+    \log{\sqrt[\leftroot{2}n]{d_1 d_2 d_3 \cdots d_n}}
+    \nonumber\\
+    &=
+    \log{R}
+    \label{eq:gmd:2}
+\end{align}
+
+
+% ---------------------------------------------------------------------------- %
+\section{Die mittlere arithmetische Distanz eines Streifens}
+\label{sec:amd}
+% ---------------------------------------------------------------------------- %
+
+\schematic{amd}
+
+Zuerst  bestimmen wir  die arithmetische  mittlere Distanz  $S_1$ des  Punktes
+$P$  von  allen   anderen  Punkten  der  Linie   $AB$. Zuerst  betrachten  wir
+das  Liniensegment  links  von  $P$. Die mittlere  arithmetische  Distanz  von
+$P$  zu   allen  Punkten  dieses  Segments   ist  $\frac{c}{2}$. Die  mittlere
+arithmetische Distanz  von $P$ zu  allen Punkten  im rechten Segment  $PB$ ist
+$\frac{b-c}{2}$. F\"ur die gesamte Linie $AB$ ergibt sich somit:
+
+\todo[noline]{%
+    Woher  diese  Gleichung  pl\"otzlich  kommt,   ist  mir  noch  nicht  ganz
+    klar: Begr\"undung suchen.%
+}
+
+\begin{align}
+    b \cdot S_1
+    &=
+    \frac{b-c}{2}(b-c) + \frac{c}{2}c = \frac{(b-c)^2}{2}+\frac{c^2}{2}
+    \nonumber\\
+    S_1
+    &=
+    \frac{b}{2} - c + \frac{c^2}{2}
+    \label{eq:amd:1}
+\end{align}
+
+Zur Bestimmung der mittleren arithmetischen Distanz aller Punkte des Streifens
+vom Streifen bzw. der mittleren  arithmetischen Distanz des Streifens von sich
+selbst  muss $S_1$  \"uber  den Streifen  integriert werden. Substituiert  man
+$c=x$:
+
+\begin{align}
+    bS_2 
+    =
+    \int_0^b
+    \left(
+        \frac{b}{2} - x + \frac{x^2}{b}
+    \right)dx
+    =
+    \left[\frac{bx}{2}-\frac{x^2}{2} + \frac{x^3}{3b}\right]_0^b
+    &=
+    \frac{b^2}{3}
+    \nonumber\\
+    S_2
+    &=
+    \frac{b}{3}
+    \label{eq:amd:2}
+\end{align}
+
+%Als   n\"achstes   wollen   wir  die   mittlere   quadratische   arithmetische
+%Distanz\footnotemark  $S_1^2$  des  Punktes $P$  vom  Streifen  bestimmen. Man
+%integriere wie folgt:
+Als   n\"achstes   wollen   wir  die   mittlere   quadratische   arithmetische
+Distanz$S_1^2$  des Punktes  $P$  vom Streifen  bestimmen. Man integriere  wie
+folgt:
+
+\begin{align}
+    bS_1^2
+    =
+    \int_0^b(x-c)^2dx
+    &=
+    \frac{b^3}{3}-cb^2+c^2b
+    \nonumber\\
+    S_1^2 = \frac{b^2}{3} - cb + c^2
+    \label{eq:amd:3}
+\end{align}
+
+%\footnotetext{%
+%    \emph{Beachte}: Die  mittlere quadratische  arithmetische Distanz  $S_1^2$
+%    ist  nicht  gleich  dem   Quadrat  der  mittleren  arithmetischen  Distanz
+%    $S_1$. Die $2$ ist kein Exponent in diesem Fall.
+%}
+
+
+F\"ur $c=0$,  also die  m.a.q.D eines Endpunktes  des Streifens  vom Streifen,
+ergibt sich $S_1^2 = \frac{b}{3}$.
+
+Um die m.a.q.D des Streifens von sich selbst zu finden, integrieren wir analog
+zu vorher:
+
+\begin{align}
+    bS_2^2
+    =
+    \int_0^b\left(\frac{b^2}{3}-bx+x^2\right)dx
+    &=
+    \frac{b^3}{6}
+    \nonumber\\
+    S_2^2
+    &=
+    \frac{b^2}{6}
+    \label{eq:amd:4}
+\end{align}
+
+
+
+% ---------------------------------------------------------------------------- %
+\section{Arithmetische durchschnittliche Distanzen eines Kreises}
+\label{sec:amdC}
+% ---------------------------------------------------------------------------- %
+
+\todo[inline]{Referenzen in Haupttext}
+\schematic{amdC1}
+
+Die   arithmetische   mittlere   Distanz    eines   Punktes   $P$   (Abbildung
+\ref{fig:amdC1} auf einem Kreis vom  Kreis selbst wird berechnet, indem \"uber
+den Kreis integriert wird. Mit $PB = 2a \cos{\theta}$ ergibt dies:
+
+\begin{gather}
+    \pi a S_1 = \int_0^{\frac{pi}{2}} 2a \cos{\theta} \cdot 2ad\theta = 4a^2
+    \nonumber\\
+    \S_1 = \frac{4a}{\pi}
+    \label{eq:amdC:1}
+\end{gather}
+
+Da die  arithmetische mittlere  Distanz f\"ur alle  Punkte des  Kreises gleich
+ist, gilt auch $S_2 = \frac{4a}{\pi}$.
+
+F\"ur die quadratische arithmetische mittlere Distanz erh\"alt man:
+
+\begin{gather}
+    \pi a S_2^2 = \int_0^{\frac{\pi}{2}} 4a^2 \cos^2{\theta} \cdot 2ad\theta = 2 \pi a^3
+    \nonumber\\
+    S_1^2 = S_2^2 = 2a^2
+    \label{eq:amdC:2}
+\end{gather}
+
+F\"ur  einen  Punkt  $P$  ausserhalb oder  innerhalb  des  Kreises  (Abbildung
+\ref{fig:amdC2}  ergibt such  aufgrund  von  $\overline{PB}^2 =  a^2  + d^2  +
+2ad\cos{\theta}$:
+
+\begin{gather}
+    \pi a S_1^2 = a \int_0^{\pi} (a^2+d^2+2ad\cos{\theta})d\theta = \pi a (d^2+a^2)
+    \nonumber\\
+    S_1^2 = d^2+a^2
+    \label{eq:amdC:3}
+\end{gather}
+
+\schematic{amdC2}
+
+F\"ur die gesamte Kreisfl\"ache bezogen auf Punkt $P$:
+
+\begin{gather}
+    \pi a^2 S_1^2 
+    = 
+    \int_0^a (d^2+r^2) 2\pi rdr 
+    = 
+    2\pi\left[\frac{a^2d^2}{2} + \frac{a^4}{4}\right]
+    \nonumber\\
+    S_1^2 = d^2 + \frac{a^2}{2}
+    \label{eq:amdC:4}
+\end{gather}
+
+Im Falle von $d=0$ ist $S_1^2 = \frac{a^2}{2}$, die quadratische arithmetische
+mittlere Distanz der Fl\"ache des Kreises bezogen auf sein Zentrum.
+
+\schematic{amdC3}
+
+Zur  Bestimmung der  q.a.m.D. einer  Kreisfl\"ache  von sich  selbst kann  man
+$\overline{P_1P_2}^2  =  r_1^2 +  r_2^2  -  2r_1r_2\cos{\theta_2 -  \theta_1}$
+\"uber die Kreisl\"ache zweimal integrieren. Darauf soll aber an dieser Stelle
+verzichtet werden.
+
+
