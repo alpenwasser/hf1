@@ -880,8 +880,8 @@ F\"ur  einen  geschlossenen  Stromkreis  aus zwei  Streifen  ist  die  gesamte
 Selbstinduktivit\"at:
 
 \begin{alignat}{3}
-    L &= 2L_1 - 2M  \; &=& \; 4l \log{\frac{R_2}{R_1}} \nonumber\\
-      &= 4l \log{4} \; &=& \; 5.545 l
+    L &= 2L_1 - 2M  \quad &=& \quad 4l \log{\frac{R_2}{R_1}} \nonumber\\
+      &= 4l \log{4} \quad &=& \quad 5.545 l
     \label{eq:tT:3}
 \end{alignat}
 
@@ -974,16 +974,16 @@ Der Durchschnitt von $\log{d}$ f\"ur $n$ Teilstreifen berechnet sich gem\"ass:
 \begin{align}
     \frac{1}{n}
     \bigg[
-        \log{d_1} + \log{d_2} + \log{d+3} + ... + \log{d_n}
+        \log{d_1} + \log{d_2} + \log{d+3} + \quad\ldots\quad + \log{d_n}
     \bigg]
     &=
     \frac{1}{n}
     \log{\bigg(
-        d_1 \cdot d_2 \cdot d_3 \cdot ... \cdot d_n 
+        d_1 \cdot d_2 \cdot d_3 \cdot \quad\ldots\quad \cdot d_n 
     \bigg)}
     \nonumber\\
     &=
-    \log{\sqrt[\leftroot{2}n]{d_1 d_2 d_3 ... d_n}}
+    \log{\sqrt[\leftroot{2}n]{d_1 d_2 d_3 \quad\ldots\quad d_n}}
     \nonumber\\
     &=
     \log{R}
@@ -1044,9 +1044,12 @@ $c=x$:
     \label{eq:amd:2}
 \end{align}
 
+%Als   n\"achstes   wollen   wir  die   mittlere   quadratische   arithmetische
+%Distanz\footnotemark  $S_1^2$  des  Punktes $P$  vom  Streifen  bestimmen. Man
+%integriere wie folgt:
 Als   n\"achstes   wollen   wir  die   mittlere   quadratische   arithmetische
-Distanz\footnotemark  $S_1^2$  des  Punktes $P$  vom  Streifen  bestimmen. Man
-integriere wie folgt:
+Distanz$S_1^2$  des Punktes  $P$  vom Streifen  bestimmen. Man integriere  wie
+folgt:
 
 \begin{align}
     bS_1^2
@@ -1059,11 +1062,11 @@ integriere wie folgt:
     \label{eq:amd:3}
 \end{align}
 
-\footnotetext{%
-    \emph{Beachte}: Die  mittlere quadratische  arithmetische Distanz  $S_1^2$
-    ist  nicht  gleich  dem   Quadrat  der  mittleren  arithmetischen  Distanz
-    $S_1$. Die $2$ ist kein Exponent in diesem Fall.
-}
+%\footnotetext{%
+%    \emph{Beachte}: Die  mittlere quadratische  arithmetische Distanz  $S_1^2$
+%    ist  nicht  gleich  dem   Quadrat  der  mittleren  arithmetischen  Distanz
+%    $S_1$. Die $2$ ist kein Exponent in diesem Fall.
+%}
 
 
 F\"ur $c=0$,  also die  m.a.q.D eines Endpunktes  des Streifens  vom Streifen,
@@ -1524,17 +1527,17 @@ mittlere Distanz
 \begin{align}
     \log{R}
     &=
-    \frac{n \log{r_1} + n \log\big(r_{12} \cdot r_{13} \cdot ... \cdot r_{1n}\big)}{n^2}
+    \frac{n \log{r_1} + n \log\big(r_{12} \cdot r_{13} \cdot \quad\ldots\quad \cdot r_{1n}\big)}{n^2}
     \nonumber\\
     &=
     \frac{1}{n}
-    \bigg(\log{r_1} + \log\big(r_{12} \cdot r_{13} \cdot ... \cdot r_{1n}\big)\bigg)
+    \bigg(\log{r_1} + \log\big(r_{12} \cdot r_{13} \cdot \quad\ldots\quad \cdot r_{1n}\big)\bigg)
     \label{eq:multCond:3}
 \end{align}
 
 Dabei  ist $r_1$  die geometrische  mittlere Distanz  eines einzelnen  Leiters
 ($0.7788\rho$, wobei $\rho$  der Radius des Leiters ist) und  $r_{12}$ ist die
-Distanz zwischen den Mitten der Leiter $1$ und $2$ usw.
+Distanz zwischen den Mitten der Leiter $1$ und $2$ usw. mit
 
 Falls $a$  der Radius des  Kreises ist,  entlang dessen die  Leiter angeordnet
 sind, erh\"alt man
@@ -1550,9 +1553,116 @@ sind, erh\"alt man
     \label{eq:multCond:4}
 \end{align}
 
+Der Beweis f\"ur Gleichung \ref{eq:multCond:4} sieht wie folgt aus: Unterteilt
+man den Kreisumfang in $n$ gleiche Segmente mit Endpunkten $A, B, C, D, E, \quad\ldots\quad
+N$ und setzt den Punkt $M$ auf der Geraden $OA$ (innerhalb oder ausserhalb des
+Kreises), um anschlessend $\overline{OM} = x$ zu setzen, erh\"alt man
+\todo[noline]{%
+    Notation  in  Paper   ist  etwas  widerspr\"uchlich  hier. \"Uberpr\"ufgen
+    (Cotes's Theorem)%
+}
+
+\begin{equation}
+    \label{eq:multCond:5}
+    x^n - a^n = \overline{MA} \cdot \overline{MB} \cdot \quad\ldots\quad \cdot \overline{MN}
+\end{equation}
+
+Nach Division durch $\overline{MA} = x - a$ ergibt sich
+
+\begin{equation}
+    \label{eq:multCond:6}
+    x^{n-1} + ax^{n-2} + a^{2}x^{n-3} \quad\ldots\quad a^{n-1} = \overline{MB} \cdot \overline{MC} \cdot \quad\ldots\quad \cdot \overline{MN}
+\end{equation}
+
+Setzt man $M$ auf $A$, gilt $x=a$, und somit folgt
+
+\begin{align}
+    na^{n-1} 
+    &= 
+    \overline{AB} \cdot \overline{AC} \cdot \quad\ldots\quad \cdot \overline{AN}
+    \nonumber\\
+    &=
+    a_{12} \cdot a_{13} \cdot \quad\ldots\quad \cdot a_{1n}
+    \label{eq:multCond:6}
+\end{align}
+
+Eingesetzt in Formel \ref{eq:multCond:3}  ergibt dies \ref{eq:multCond:4}, wie
+erw\"unscht.
 
 \schematic{multCond4}
+
+Im  Falle  eines  Stromkreises  mit einem  gr\"osseren  zentralen  Leiter  und
+mehreren kleineren \"ausseren Leitern  (Abbildung \ref{fig:multCond4}) ist die
+gegenseitige Induktivit\"at des gr\"osseren Leiters auf die kleineren
+
+\begin{equation}
+    \label{eq:multCond:7}
+    M = 1l \left[\log{\frac{2l}{a}} - 1\right]
+\end{equation}
+
+Da eie mittlere geometrische Distanz des grossen Leiters zum Rest $a$ ist.
+
+Die Selbstinduktivit\"at des \"ausseren Leitersystems ist
+
+\begin{align}
+    L
+    &=
+    L_1 + L_2 - 2M
+    \nonumber\\
+    \text{wobei} \qquad
+    L_1
+    &=
+    2l \left[\log{\frac{2l}{a_1}} - \frac{3}{4} \right]
+    \nonumber\\
+    L_2
+    &=
+    2l \left[\log{2l} - \log\big(r_1 na^{n-1}\big)^{\frac{1}{n}} - 1 \right]
+    \nonumber\\
+    M
+    &=
+    2l \left[\log{\frac{2l}{a}} - 1 \right]
+    \nonumber\\
+    \text{somit} \qquad
+    L
+    &=
+    2l \left[\log{\frac{a^2}{a_1}} - \log\big(r_1 na^{n-1}\big)^{\frac{1}{n}} + \frac{1}{4} \right]
+    \label{eq:multCond:8}
+\end{align}
+
 \schematic{multCond5}
+
+Ist    der    Innenleiter    ebenfalls   ein    Mehrleitersystem    (Abbildung
+\ref{fig:multCond5}),  kann bei  symmetrischer Anordnung  mit dem  Theorem von
+Cotes  (siehe oben)  die  mittlere geometrische  Distanz $R_{12}$  hergeleitet
+werden:
+\todo[noline]{%
+    Herleitung noch nicht ganz klar. Nochmals versuchen, nachzuvollziehen.%
+}
+
+\begin{align}
+    \log{R_{12}}
+    &=
+    \frac{1}{n}
+    \log\big(a_2^n - a_1^n \big)
+    \nonumber\\
+    \text{oder}\qquad
+    R_{12}
+    &=
+    \big(a_2^n - a_1^n\big)
+    \label{eq:multCond:9}
+\end{align}
+
+Im  Grenzfall  von $n  \rightarrow  \infty$  ergibt  sich  der Fall  von  zwei
+konzentrischen R\"ohren.
+
+Nimmt  man  Formel \ref{eq:multCond:4}  zur  Berechnung  von $R_1$  und  $R_2$
+und  Formel \ref{eq:multCond:9}  zur  Berechnung von  $R_{12}$,  kann man  die
+Selbstinduktivit\"at des Stromkreises bestimmen zu
+
+\begin{equation}
+    \label{eq:multCond:10}
+    L = 2l \log{\frac{R_{12}^2}{R_1 R_2}}
+\end{equation}
 
 
 % ---------------------------------------------------------------------------- %
@@ -1562,7 +1672,295 @@ sind, erh\"alt man
 
 \schematic{nonInd}
 
+Man   nehme  eine   schlangenf\"ormige   Leiteranordnung   wie  in   Abbildung
+\ref{fig:nonInd}  gezeigt. Die L\"ange  einer Querverbindung\footnotemark  sei
+$l$, der Abstand  der Windungen $d$, der Leiter habe  einen runden Querschnitt
+mit Radius $\rho$.
+
+\footnotetext{%
+    im Folgenden  werden die  einzelnen Querverbindung der  Einfachheit halber
+    als  Dr\"ahte  bezeichnet,  obwohl  die gesamte  Windung  nat\"urlich  ein
+    durchgehendes St\"uck Leiter ist.%
+}
+
+Die   resultierende  Selbstinduktivit\"at   eines  Drahtes   $A$  ist   gleich
+der  Induktivit\"at  des  Drahtes  auf  sich  selbst  plus  die  gegenseitigen
+Induktivit\"aten aller Dr\"ahte auf ihn. Dabei  werden die Dr\"ahte $2$, $2'$,
+$4$,  $4'$  etc.  die  Selbstinduktivit\"at von  $A$  erh\"ohen,  wogegen  die
+Dr\"ahte  $1$, $1'$,  $3$, $3'$  etc.  diese reduzieren. Wenn  also $L_1$  die
+Selbstinduktivit\"at  des Drahtes  $A$  auf  sich selbst  und  $M_1$ etc.  die
+gegenseitigen Induktivit\"aten  der Dr\"ahte $1$  etc. auf $A$  sind, erh\"alt
+man f\"ur die gesamte Induktivit\"at $L_A$ des Drahtes $A$
+
+\begin{align}
+    L_A
+    &=
+    L_1 + 2M_2 + 2M_4 + 2M_6 + \quad\ldots\quad + 2M_{n-1} - 2M_1 - 2M_3 - 2M_5 \quad \ldots \quad - M_n
+    \nonumber\\
+    &=
+    (L_1 - M_1)  - (M_1 - M_2) - (M_3 - M_4) - (M_5 - M_6) \quad\ldots\quad
+    \nonumber\\
+    &\qquad+
+    (M_2 - M_3) + (M_4 - M_5) + (M_6 - M_7) + \quad\ldots
+    \nonumber\\
+    &=
+    2l
+    \left[
+        \log{\frac{d}{\rho}} + \frac{1}{4}
+    \right]
+    - 2l \log\frac{2}{1} - 2l \log\frac{4}{3} - 2l \log\frac{6}{5} - \quad\ldots
+    \nonumber\\
+    &\qquad+
+    2l \log\frac{3}{2} + 2l \log\frac{5}{4} + 2l \log\frac{7}{6} + \quad\ldots
+    \nonumber\\
+    &=
+    2l\left[
+        \log\frac{d}{\rho} + \frac{1}{4}
+    \right]
+    -
+    2l \log\bigg(\frac{2 \cdot 4 \cdot 6 \cdot 8 \cdot \quad\ldots}{1 \cdot 3 \cdot 5 \cdot 7 \cdot \quad\ldots}\bigg)
+    +
+    2l \log\bigg(\frac{3 \cdot 5 \cdot 7 \cdot 9 \cdot \quad\ldots}{2 \cdot 4 \cdot 6 \cdot 8 \cdot \quad\ldots}\bigg)
+    \nonumber\\
+    &=
+    2l\left[
+        \log\frac{d}{\rho} + \frac{1}{4}
+    \right]
+    -
+    2l \log\bigg(
+        \frac{2^2 \cdot 4^2 \cdot 6^2 \cdot 8^2 \cdot \quad\ldots}
+             {1^2 \cdot 3^2 \cdot 5^2 \cdot 7^2 \cdot 9^2 \cdot \quad\ldots}
+    \bigg)
+    \nonumber\\
+    &=
+    2l\left[
+        \log\frac{d}{\rho} + \frac{1}{4}
+        -
+        2 \log\bigg(
+            \frac{2 \cdot 4 \cdot 6 \cdot 8 \cdot \quad \ldots \cdot (n-1)}
+                 {1 \cdot 3 \cdot 5 \cdot 7 \cdot \quad \ldots \cdot (n-2)\sqrt{n}}
+        \bigg)
+    \right]
+    \label{eq:nIW:1}
+\end{align}
+
+Wobei die gesamte Anzahl Dr\"ahte $2n$ ist. Wir f\"uhren nun f\"ur den letzten
+Term in der Klammer  die Konstante $A$ ein, welche die  Anzahl Dr\"ahte in der
+Gleichung parametrisiert, und schreiben \ref{eq:nIW:1} wie folgt:
+
+\begin{equation}
+    \label{eq:nIW:2}
+    L_A = 2l 
+    \left[
+        \log\frac{d}{\rho} + \frac{1}{4} - A
+    \right]
+\end{equation}
+
+Im Fall von unendlich vielen Dr\"ahten erh\"alt man
+
+\begin{equation*}
+    \frac{1 \cdot 3}{2^2} \cdot \frac{3 \cdot 5}{4^2} \cdot \frac{5 \cdot 7}{6^2} \quad\ldots\quad
+    \frac{(2n-1)(2n+1)}{(2n)^2}
+    =
+    \frac{\pi}{2}
+\end{equation*}
+
+\begin{align}
+    L
+    &=
+    2l
+    \left[
+        \log\frac{d}{\rho} + \frac{1}{4} - \log\frac{\pi}{4}
+    \right]
+    \nonumber\\
+    &=
+    2l
+    \left[
+        \log\frac{2d}{\pi\rho} + \frac{1}{4}
+    \right]
+    \label{eq:nIW:3}
+\end{align}
+
+Einige Werte f\"ur die Konstante $A$:
+
+\begin{alignat*}{4}
+    \text{F\"ur}\qquad
+    2n &=  2     ,&\  A &= 0                             \\
+    2n &=  4     ,&\  A &= \log{2}             \  &= 0.6931 \\
+    2n &=  6     ,&\  A &= \log\frac{4}{3}     \  &= 0.2876 \\
+    2n &= 10     ,&\  A &= \log\frac{64}{45}   \  &= 0.3522 \\
+    2n &= 14     ,&\  A &= \log\frac{256}{175} \  &= 0.3804 \\
+    2n &= 18     ,&\  A &= \log\frac{128}{105} \  &= 0.3961 \\
+    2n &= 38     ,&\  A &= \  \ldots\          \  &= 0.4253 \\
+    2n &= 70     ,&\  A &= \  \ldots\          \  &= 0.4373 \\
+    2n &= \infty ,&\  A &= \  \ldots\          \  &= 0.4516
+\end{alignat*}
+
+Die Selbstinduktivit\"at eines solchen Systems ist also stets um $2Al$ kleiner
+als die Selbstinduktivit\"at eines einzelnen Drahtpaares.
+
+Betrachtet man einen der Dr\"ahte am Ende der Konfiguration, ergibt sich f\"ur
+$L$
+
+\begin{align*}
+    L
+    &=
+    L_1 - M_1 + M_2 - M_3 + M_4 - \quad \ldots
+    \nonumber\\
+    &=
+    2l\left[\log\frac{d}{\rho} + \frac{1}{4}\right]
+    +
+    (M_2 - M_3) + (M_4 - M_5) + \quad \ldots
+    \\
+    &=
+    2l
+    \left[
+        \log\frac{d}{\rho} + \frac{1}{4} 
+        +
+        \log\bigg(
+            \frac{3 \cdot 5 \cdot 7 \cdot \quad\ldots}
+                 {2 \cdot 4 \cdot 6 \cdot \quad\ldots}
+        \bigg)
+    \right]
+    \\
+    &=
+    2l
+    \left[
+        \log\frac{d}{\rho} + \frac{1}{4} + A_1
+    \right]
+    \\
+    \text{wobei}\qquad
+    A_1
+    &=
+    -\log\frac{3}{2} \quad \text{f\"ur} \quad 2n = 4
+    \\
+    A_1
+    &=
+    -\log\frac{15}{8} \quad \text{f\"ur} \quad 2n = 6 \quad \text{etc.}
+\end{align*}
+
+F\"ur den zweitletzten Draht erh\"alt man
+
+\begin{align*}
+    L 
+    &=
+    2l
+    \left[
+        \log\frac{d}{\rho} + \frac{1}{4} - A_2
+    \right]
+    \\
+    \text{wobei}\qquad
+    A_2
+    &=
+    \log\frac{8}{3} \quad \text{f\"ur} \quad 2n = 4
+    \\
+    A_2
+    &=
+    \log\frac{16}{5} \quad \text{f\"ur} \quad 2n = 6 \quad \text{etc.}
+\end{align*}
+
+Und f\"ur den drittletzten Draht ergibt sich
+
+\begin{equation*}
+    A_3 = \log\frac{16}{5} \quad \text{f\"ur} \quad 2n = 8
+\end{equation*}
+
+Dies   sollte  ausreichen,   um   f\"ur  eine   beliebige  Konfiguration   die
+Induktivit\"at eines beliebigen Drahtes berechnen zu k\"onnen.
+
+
 % ---------------------------------------------------------------------------- %
 \section{Der Fall der nichtinduktiven Windung um einen kreisf\"ormigen Zylinder}
 \label{sec:nonIndWindings}
 % ---------------------------------------------------------------------------- %
+
+Die Selbstinduktivit\"at einer einzelnen Windung ist ungef\"ahr
+
+\begin{equation}
+    \label{eq:nIW:1}
+    L_1 = 4 \pi a \left[ \log\frac{8a}{\rho} - 1.75\right]
+\end{equation}
+
+wobei $a$  der Radius der Windung  und $\rho$ der Radius  des Drahtes ist. Die
+gegenseitige  Induktivit\"at  zweier  nebeneinander  liegender  Windungen  ist
+ungef\"ahr
+
+\begin{equation}
+    \label{eq:nIW:2}
+    M_1 = 4 \pi a \left[ \log\frac{8a}{d} - 2 \right]
+\end{equation}
+
+wobei  $d$  die   Entfernung  der  Mittelpunkte  der   beiden  Windungen  ist.
+\ref{eq:nIW:2} gilt,  solange $d$ klein  ist im Vergleich zu  $a$. Analog dazu
+gilt
+
+\begin{align*}
+    M_2 
+    &= 
+    4 \pi a \left[ \log\frac{8a}{2d} - 2 \right]
+    \\
+    M_1 - M_2
+    &= 
+    4 \pi a \big(\log{2}\big)
+    \\
+    M_3 - M_4
+    &= 
+    4 \pi a \big(\log\frac{4}{3}\big)
+    \quad \text{etc.}
+\end{align*}
+
+F\"ur eine Windung $A$ ergibt sich somit
+
+\begin{align}
+    L_A
+    &=
+    L_1 - 2M_1 + 2M_2 - 2M_3 + 2M_4 + \quad \ldots 
+    \nonumber\\
+    &=
+    L_1 - M_1 - (M_1 - M_2) + (M_2 - M_3) - (M_3 - M_4) \quad \ldots
+    \nonumber\\
+    &=
+    4 \pi a
+    \left[
+        \log\frac{d}{\rho} + \frac{1}{4}
+        -
+        \log{2}
+        +
+        \log\frac{3}{2}
+        -
+        \log\frac{4}{3}
+    \right]
+    \quad \text{f\"ur $2n = 8$ Windungen}
+    \nonumber\\
+    &=
+    4 \pi a
+    \left[
+        \log\frac{d}{\rho}
+        +
+        \frac{1}{4}
+        -
+        2\log\left(
+            \frac{2 \cdot 4 \cdot 6 \cdot 8 \quad \ldots \quad (n-1)}
+                 {1 \cdot 3 \cdot 5 \cdot 7 \quad \ldots \quad (n-2)\sqrt{2}}
+        \right)
+    \right]
+    \quad \text{f\"ur $2n = 8$ Windungen}
+    \nonumber\\
+    &=
+    4 \pi a
+    \left[
+        \log\frac{d}{\rho}
+        +
+        \frac{1}{4}
+        -
+        A
+    \right]
+    \label{eq:nIW:3}
+\end{align}
+
+Wobei $A$ die gleichen Werte wie  f\"ur den Fall der Schlangenlinie im vorigen
+Abschnitt aufweist,  solange die L\"ange der  Spule klein ist im  Vergleich zu
+ihrem  Radius  und somit  die  Formel  f\"ur die  gegenseitige  Induktivit\"at
+$M$  genau genug  ist. Die  Werte f\"ur  $A$ sind  positiv,  ausser f\"ur  die
+\"aussersten Dr\"ahte, und  h\"angen von der Anzahl Dr\"ahte  und der Position
+des Drahtes ab.
