@@ -3,6 +3,10 @@
 \label{chap:rosa}
 % **************************************************************************** %
 
+Dieses  Kapitel  fasst  die   analytischen  Herleitungen  und  L\"osungen  aus
+Rosa's Artikel  \cite{ref:inductance:rosa} f\"ur die im  n\"achsten Kapitel zu
+simulierenden Beispiele zusammen.
+
 % ---------------------------------------------------------------------------- %
 \section{Selbstinduktivit\"at eines geraden, zylindrischen Drahtes}
 \label{sec:selfStraightCylWire}
@@ -974,16 +978,16 @@ Der Durchschnitt von $\log{d}$ f\"ur $n$ Teilstreifen berechnet sich gem\"ass:
 \begin{align}
     \frac{1}{n}
     \bigg[
-        \log{d_1} + \log{d_2} + \log{d+3} + \quad\ldots\quad + \log{d_n}
+        \log{d_1} + \log{d_2} + \log{d+3} + \cdots + \log{d_n}
     \bigg]
     &=
     \frac{1}{n}
     \log{\bigg(
-        d_1 \cdot d_2 \cdot d_3 \cdot \quad\ldots\quad \cdot d_n 
+        d_1 \cdot d_2 \cdot d_3 \cdot \cdots \cdot d_n 
     \bigg)}
     \nonumber\\
     &=
-    \log{\sqrt[\leftroot{2}n]{d_1 d_2 d_3 \quad\ldots\quad d_n}}
+    \log{\sqrt[\leftroot{2}n]{d_1 d_2 d_3 \cdots d_n}}
     \nonumber\\
     &=
     \log{R}
@@ -1527,11 +1531,11 @@ mittlere Distanz
 \begin{align}
     \log{R}
     &=
-    \frac{n \log{r_1} + n \log\big(r_{12} \cdot r_{13} \cdot \quad\ldots\quad \cdot r_{1n}\big)}{n^2}
+    \frac{n \log{r_1} + n \log\big(r_{12} \cdot r_{13} \cdot \cdots \cdot r_{1n}\big)}{n^2}
     \nonumber\\
     &=
     \frac{1}{n}
-    \bigg(\log{r_1} + \log\big(r_{12} \cdot r_{13} \cdot \quad\ldots\quad \cdot r_{1n}\big)\bigg)
+    \bigg(\log{r_1} + \log\big(r_{12} \cdot r_{13} \cdot \cdots \cdot r_{1n}\big)\bigg)
     \label{eq:multCond:3}
 \end{align}
 
@@ -1554,7 +1558,7 @@ sind, erh\"alt man
 \end{align}
 
 Der Beweis f\"ur Gleichung \ref{eq:multCond:4} sieht wie folgt aus: Unterteilt
-man den Kreisumfang in $n$ gleiche Segmente mit Endpunkten $A, B, C, D, E, \quad\ldots\quad
+man den Kreisumfang in $n$ gleiche Segmente mit Endpunkten $A, B, C, D, E, \cdots
 N$ und setzt den Punkt $M$ auf der Geraden $OA$ (innerhalb oder ausserhalb des
 Kreises), um anschlessend $\overline{OM} = x$ zu setzen, erh\"alt man
 \todo[noline]{%
@@ -1564,14 +1568,14 @@ Kreises), um anschlessend $\overline{OM} = x$ zu setzen, erh\"alt man
 
 \begin{equation}
     \label{eq:multCond:5}
-    x^n - a^n = \overline{MA} \cdot \overline{MB} \cdot \quad\ldots\quad \cdot \overline{MN}
+    x^n - a^n = \overline{MA} \cdot \overline{MB} \cdot \cdots \cdot \overline{MN}
 \end{equation}
 
 Nach Division durch $\overline{MA} = x - a$ ergibt sich
 
 \begin{equation}
     \label{eq:multCond:6}
-    x^{n-1} + ax^{n-2} + a^{2}x^{n-3} \quad\ldots\quad a^{n-1} = \overline{MB} \cdot \overline{MC} \cdot \quad\ldots\quad \cdot \overline{MN}
+    x^{n-1} + ax^{n-2} + a^{2}x^{n-3} \cdots a^{n-1} = \overline{MB} \cdot \overline{MC} \cdot \cdots \cdot \overline{MN}
 \end{equation}
 
 Setzt man $M$ auf $A$, gilt $x=a$, und somit folgt
@@ -1579,10 +1583,10 @@ Setzt man $M$ auf $A$, gilt $x=a$, und somit folgt
 \begin{align}
     na^{n-1} 
     &= 
-    \overline{AB} \cdot \overline{AC} \cdot \quad\ldots\quad \cdot \overline{AN}
+    \overline{AB} \cdot \overline{AC} \cdot \cdots \cdot \overline{AN}
     \nonumber\\
     &=
-    a_{12} \cdot a_{13} \cdot \quad\ldots\quad \cdot a_{1n}
+    a_{12} \cdot a_{13} \cdot \cdots \cdot a_{1n}
     \label{eq:multCond:6}
 \end{align}
 
@@ -1695,32 +1699,32 @@ man f\"ur die gesamte Induktivit\"at $L_A$ des Drahtes $A$
 \begin{align}
     L_A
     &=
-    L_1 + 2M_2 + 2M_4 + 2M_6 + \quad\ldots\quad + 2M_{n-1} - 2M_1 - 2M_3 - 2M_5 \quad \ldots \quad - M_n
+    L_1 + 2M_2 + 2M_4 + 2M_6 + \cdots + 2M_{n-1} - 2M_1 - 2M_3 - 2M_5 \cdots - M_n
     \nonumber\\
     &=
-    (L_1 - M_1)  - (M_1 - M_2) - (M_3 - M_4) - (M_5 - M_6) \quad\ldots\quad
+    (L_1 - M_1)  - (M_1 - M_2) - (M_3 - M_4) - (M_5 - M_6) \cdots
     \nonumber\\
     &\qquad+
-    (M_2 - M_3) + (M_4 - M_5) + (M_6 - M_7) + \quad\ldots
+    (M_2 - M_3) + (M_4 - M_5) + (M_6 - M_7) + \cdots
     \nonumber\\
     &=
     2l
     \left[
         \log{\frac{d}{\rho}} + \frac{1}{4}
     \right]
-    - 2l \log\frac{2}{1} - 2l \log\frac{4}{3} - 2l \log\frac{6}{5} - \quad\ldots
+    - 2l \log\frac{2}{1} - 2l \log\frac{4}{3} - 2l \log\frac{6}{5} - \cdots
     \nonumber\\
     &\qquad+
-    2l \log\frac{3}{2} + 2l \log\frac{5}{4} + 2l \log\frac{7}{6} + \quad\ldots
+    2l \log\frac{3}{2} + 2l \log\frac{5}{4} + 2l \log\frac{7}{6} + \cdots
     \nonumber\\
     &=
     2l\left[
         \log\frac{d}{\rho} + \frac{1}{4}
     \right]
     -
-    2l \log\bigg(\frac{2 \cdot 4 \cdot 6 \cdot 8 \cdot \quad\ldots}{1 \cdot 3 \cdot 5 \cdot 7 \cdot \quad\ldots}\bigg)
+    2l \log\bigg(\frac{2 \cdot 4 \cdot 6 \cdot 8 \cdot \cdots}{1 \cdot 3 \cdot 5 \cdot 7 \cdot \cdots}\bigg)
     +
-    2l \log\bigg(\frac{3 \cdot 5 \cdot 7 \cdot 9 \cdot \quad\ldots}{2 \cdot 4 \cdot 6 \cdot 8 \cdot \quad\ldots}\bigg)
+    2l \log\bigg(\frac{3 \cdot 5 \cdot 7 \cdot 9 \cdot \cdots}{2 \cdot 4 \cdot 6 \cdot 8 \cdot \cdots}\bigg)
     \nonumber\\
     &=
     2l\left[
@@ -1728,8 +1732,8 @@ man f\"ur die gesamte Induktivit\"at $L_A$ des Drahtes $A$
     \right]
     -
     2l \log\bigg(
-        \frac{2^2 \cdot 4^2 \cdot 6^2 \cdot 8^2 \cdot \quad\ldots}
-             {1^2 \cdot 3^2 \cdot 5^2 \cdot 7^2 \cdot 9^2 \cdot \quad\ldots}
+        \frac{2^2 \cdot 4^2 \cdot 6^2 \cdot 8^2 \cdot \cdots}
+             {1^2 \cdot 3^2 \cdot 5^2 \cdot 7^2 \cdot 9^2 \cdot \cdots}
     \bigg)
     \nonumber\\
     &=
@@ -1737,8 +1741,8 @@ man f\"ur die gesamte Induktivit\"at $L_A$ des Drahtes $A$
         \log\frac{d}{\rho} + \frac{1}{4}
         -
         2 \log\bigg(
-            \frac{2 \cdot 4 \cdot 6 \cdot 8 \cdot \quad \ldots \cdot (n-1)}
-                 {1 \cdot 3 \cdot 5 \cdot 7 \cdot \quad \ldots \cdot (n-2)\sqrt{n}}
+            \frac{2 \cdot 4 \cdot 6 \cdot 8 \cdot \cdots \cdot (n-1)}
+                 {1 \cdot 3 \cdot 5 \cdot 7 \cdot \cdots \cdot (n-2)\sqrt{n}}
         \bigg)
     \right]
     \label{eq:nIW:1}
@@ -1759,7 +1763,7 @@ Gleichung parametrisiert, und schreiben \ref{eq:nIW:1} wie folgt:
 Im Fall von unendlich vielen Dr\"ahten erh\"alt man
 
 \begin{equation*}
-    \frac{1 \cdot 3}{2^2} \cdot \frac{3 \cdot 5}{4^2} \cdot \frac{5 \cdot 7}{6^2} \quad\ldots\quad
+    \frac{1 \cdot 3}{2^2} \cdot \frac{3 \cdot 5}{4^2} \cdot \frac{5 \cdot 7}{6^2} \cdots
     \frac{(2n-1)(2n+1)}{(2n)^2}
     =
     \frac{\pi}{2}
@@ -1791,9 +1795,9 @@ Einige Werte f\"ur die Konstante $A$:
     2n &= 10     ,&\  A &= \log\frac{64}{45}   \  &= 0.3522 \\
     2n &= 14     ,&\  A &= \log\frac{256}{175} \  &= 0.3804 \\
     2n &= 18     ,&\  A &= \log\frac{128}{105} \  &= 0.3961 \\
-    2n &= 38     ,&\  A &= \  \ldots\          \  &= 0.4253 \\
-    2n &= 70     ,&\  A &= \  \ldots\          \  &= 0.4373 \\
-    2n &= \infty ,&\  A &= \  \ldots\          \  &= 0.4516
+    2n &= 38     ,&\  A &= \  \cdots\          \  &= 0.4253 \\
+    2n &= 70     ,&\  A &= \  \cdots\          \  &= 0.4373 \\
+    2n &= \infty ,&\  A &= \  \cdots\          \  &= 0.4516
 \end{alignat*}
 
 Die Selbstinduktivit\"at eines solchen Systems ist also stets um $2Al$ kleiner
@@ -1805,12 +1809,12 @@ $L$
 \begin{align*}
     L
     &=
-    L_1 - M_1 + M_2 - M_3 + M_4 - \quad \ldots
+    L_1 - M_1 + M_2 - M_3 + M_4 - \cdots
     \nonumber\\
     &=
     2l\left[\log\frac{d}{\rho} + \frac{1}{4}\right]
     +
-    (M_2 - M_3) + (M_4 - M_5) + \quad \ldots
+    (M_2 - M_3) + (M_4 - M_5) + \cdots
     \\
     &=
     2l
@@ -1818,8 +1822,8 @@ $L$
         \log\frac{d}{\rho} + \frac{1}{4} 
         +
         \log\bigg(
-            \frac{3 \cdot 5 \cdot 7 \cdot \quad\ldots}
-                 {2 \cdot 4 \cdot 6 \cdot \quad\ldots}
+            \frac{3 \cdot 5 \cdot 7 \cdot \cdots}
+                 {2 \cdot 4 \cdot 6 \cdot \cdots}
         \bigg)
     \right]
     \\
@@ -1914,10 +1918,10 @@ F\"ur eine Windung $A$ ergibt sich somit
 \begin{align}
     L_A
     &=
-    L_1 - 2M_1 + 2M_2 - 2M_3 + 2M_4 + \quad \ldots 
+    L_1 - 2M_1 + 2M_2 - 2M_3 + 2M_4 + \cdots
     \nonumber\\
     &=
-    L_1 - M_1 - (M_1 - M_2) + (M_2 - M_3) - (M_3 - M_4) \quad \ldots
+    L_1 - M_1 - (M_1 - M_2) + (M_2 - M_3) - (M_3 - M_4) \cdots
     \nonumber\\
     &=
     4 \pi a
@@ -1940,8 +1944,8 @@ F\"ur eine Windung $A$ ergibt sich somit
         \frac{1}{4}
         -
         2\log\left(
-            \frac{2 \cdot 4 \cdot 6 \cdot 8 \quad \ldots \quad (n-1)}
-                 {1 \cdot 3 \cdot 5 \cdot 7 \quad \ldots \quad (n-2)\sqrt{2}}
+            \frac{2 \cdot 4 \cdot 6 \cdot 8 \cdots (n-1)}
+                 {1 \cdot 3 \cdot 5 \cdot 7 \cdots (n-2)\sqrt{2}}
         \right)
     \right]
     \quad \text{f\"ur $2n = 8$ Windungen}
